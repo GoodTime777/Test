@@ -1,0 +1,164 @@
+@use "variables";
+@use "./mixins" as mixins;
+@use "decoration";
+
+.contacts {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 40px 0px 40px;
+
+  @media (min-width: 320px) and (max-width: 1023px) {
+    flex-flow: wrap;
+    padding: 10px 10px 0px 10px;
+    justify-content: center;
+  }
+  h2 {
+    margin-bottom: 0px;
+  }
+
+  &__info-content,
+  &__contacts-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 20px;
+
+    @media (min-width: 320px) and (max-width: 1023px) {
+      padding: 10px 10px;
+    }
+  }
+
+  &__info {
+    width: 52%;
+    border-radius: 16px;
+
+    @media (min-width: 1300px) and (max-width: 1480px) {
+      width: 57.5%;
+    }
+    @media (min-width: 1024px) and (max-width: 1299px) {
+      width: 65%;
+    }
+    @media (min-width: 320px) and (max-width: 1023px) {
+      order: 2;
+      width: 100%;
+    }
+
+    &-content {
+      color: var(--color-text-gray);
+      background: var(--color-bg-glass);
+      border-radius: 16px;
+      box-shadow: 0 4px 10px var(--color-shadow-black-05);
+      backdrop-filter: blur(8.8px);
+      -webkit-backdrop-filter: blur(8.8px);
+      border: 1px solid var(--color-border-white-03);
+      transition: background 0.7s ease, transform 0.7s ease,
+        box-shadow 0.7s ease;
+
+      @media (min-width: 320px) and (max-width: 1023px) {
+      }
+
+      &:hover {
+        color: var(--color-text-black);
+        background: var(--color-bg-glass-hover-orange);
+        box-shadow: 0 4px 30px var(--color-shadow-black-02);
+        transform: translate(10px, -14px);
+
+        @media (min-width: 320px) and (max-width: 1023px) {
+          transform: translate(0px, 0px);
+          color: var(--color-text-gray);
+          background: var(--color-bg-glass);
+          box-shadow: 0 4px 10px var(--color-shadow-black-05);
+        }
+      }
+    }
+  }
+  &__contacts {
+    @include mixins.flex();
+    width: 50%;
+    text-align: center;
+    flex-direction: column;
+
+    @media (min-width: 320px) and (max-width: 1023px) {
+      order: 1;
+      width: 100%;
+    }
+    &-contact {
+      color: var(--color-text-black);
+      margin: 0 auto;
+
+      &-phones {
+        &-box {
+          a {
+            font-size: clamp(
+              0.875rem,
+              0.8rem + 0.375vw,
+              1.25rem
+            ); //20-14 320-1920
+            color: var(--color-text-black);
+          }
+          span mat-icon {
+            font-size: 20px;
+            margin-bottom: -7px;
+          }
+        }
+      }
+
+      &-time {
+        &-detail {
+          .day {
+            font-weight: 600;
+          }
+        }
+      }
+    }
+
+    &-map {
+      cursor: pointer;
+      width: 100%;
+      margin-bottom: 20px;
+      iframe {
+        @media (min-width: 1024px) and (max-width: 1299px) {
+          width: 85%;
+        }
+        @media (min-width: 320px) and (max-width: 1023px) {
+          width: 100%;
+        }
+      }
+    }
+
+    &-buttons {
+      @media (min-width: 1024px) and (max-width: 1299px) {
+        margin-bottom: 10px;
+      }
+      @media (min-width: 320px) and (max-width: 1023px) {
+        width: 100%;
+        gap: 0;
+      }
+
+      &-btn {
+        @media (min-width: 320px) and (max-width: 1023px) {
+          width: 100%;
+        }
+        button {
+          @media (min-width: 320px) and (max-width: 1023px) {
+            background-color: black;
+            color: white;
+            border: none;
+          }
+        }
+        button:hover {
+          @media (min-width: 320px) and (max-width: 1023px) {
+            background-color: rgb(0, 0, 0);
+            color: white;
+          }
+        }
+        button:active {
+          @media (min-width: 320px) and (max-width: 1023px) {
+            background-color: white;
+            color: black;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,148 @@
+<div class="wrapper">
+  <div class="content calculator">
+    <h2 class="calculator__title">Цены</h2>
+    <div class="calculator__price">
+      <table class="table-one">
+        <thead>
+          <tr>
+            <th>Вид работ</th>
+            <th>Площадь</th>
+            <th>Толщина</th>
+            <th class="inline-flex">Цена руб/м<sup>2</sup></th>
+            <th>Дополнительно</th>
+            <th>*</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Стяжка пола</td>
+            <td>1м<sup>2</sup></td>
+            <td>6см</td>
+            <td>800</td>
+            <td>каждый см свыше: 150 руб.</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>Штукатурка стен</td>
+            <td>1м<sup>2</sup></td>
+            <td>20 мм*</td>
+            <td>750</td>
+            <td>-</td>
+            <td>*от 300 м<sup>2</sup></td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="table-two">
+        <thead>
+          <tr>
+            <th>Вид работ</th>
+            <th>Площадь</th>
+            <th>Толщина</th>
+            <th>Цена руб/м<sup>2</sup></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Откосы</td>
+            <td>1м</td>
+            <td>до 20мм</td>
+            <td>950</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <h2 class="calculator__title">Рассчет стоимости</h2>
+    <div class="calculator__container">
+      <div class="calculator__container-calc calc-floor">
+        <h2 class="calculator__container-calc-name">Cтяжка пола</h2>
+        <div class="calculator__container-calc-wrap">
+          <div class="calculator__container-calc-wrap-item">
+            <div class="calculator__container-calc-wrap-item-label">
+              Площадь (м<sup>2</sup>)
+            </div>
+            <div class="calculator__container-calc-wrap-item-input">
+              <input type="number" name="area" [formControl]="areaFloor" />
+              <mat-error>
+                @if(areaFloor.hasError('required')){ Это обязательное поле
+                }@else if(areaFloor.hasError('min')){ Площать от
+                1(м<sup>2</sup>)}
+              </mat-error>
+            </div>
+          </div>
+          <div class="calculator__container-calc-wrap-item">
+            <div class="calculator__container-calc-wrap-item-label">
+              Толщина (см)
+            </div>
+            <div class="calculator__container-calc-wrap-item-input">
+              <input type="number" name="width" [formControl]="widthFloor" />
+              <mat-error>
+                @if(widthFloor.hasError('required')){ Это обязательное поле
+                }@else if(widthFloor.hasError('min')){ Толщина от 6см}
+              </mat-error>
+            </div>
+          </div>
+          <div class="calculator__container-calc-wrap-item result-floor">
+            <button
+              class="calculator__container-calc-wrap-item-btn"
+              (click)="calculateFloor()"
+              [disabled]="
+                (widthFloor.invalid && areaFloor.invalid) ||
+                widthFloor.invalid ||
+                areaFloor.invalid
+              "
+            >
+              Рассчитать
+            </button>
+            <div class="calculator__container-calc-wrap-item-result result">
+              Итого:{{ resultFloor }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="calculator__container-calc calc-wall">
+        <h2 class="calculator__container-calc-name">Штукатурка стен</h2>
+        <div class="calculator__container-calc-wrap">
+          <div class="calculator__container-calc-wrap-item">
+            <div class="calculator__container-calc-wrap-item-label">
+              Площадь (м<sup>2</sup>)
+            </div>
+            <div class="calculator__container-calc-wrap-item-input">
+              <input type="number" name="area" [formControl]="areaWall" />
+              <mat-error>
+                @if(areaWall.hasError('required') ){ Это обязательное поле
+                }@else if(areaWall.hasError('min')){ Площать от
+                1(м<sup>2</sup>)}
+              </mat-error>
+            </div>
+          </div>
+
+          <div class="calculator__container-calc-wrap-item result-floor">
+            <button
+              class="calculator__container-calc-wrap-item-btn"
+              (click)="calculateWall()"
+              [disabled]="areaWall.invalid"
+            >
+              Рассчитать
+            </button>
+            <div class="calculator__container-calc-wrap-item-result result">
+              Итого:{{ resultWall }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="calculator__result">
+      <div class="calculator__result-number result">
+        ИТОГОВАЯ СТОИМОСТЬ: {{ resultFloor + resultWall }} &#8381;
+      </div>
+      <p class="calculator__result-description">
+        Точная стоимость будет рассчитана после замеров мастером.
+      </p>
+      <div class="calculator__result-btn btn">
+        <button class="btn-orange" (click)="openDialog()">Оставить заявку</button>
+      </div>
+    </div>
+  </div>
+</div>

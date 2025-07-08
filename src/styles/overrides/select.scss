@@ -1,0 +1,13 @@
+@use "variables";
+@use '@angular/material' as mat;
+
+:root {
+  @include mat.select-overrides(
+    (
+      panel-background-color:var(--color-dune),
+      enabled-arrow-color:var(--color-white-07),
+      focused-arrow-color:var(--color-white),
+      invalid-arrow-color:var(--color-rosso-corsa),
+    )
+  );
+}

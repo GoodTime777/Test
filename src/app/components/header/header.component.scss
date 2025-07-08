@@ -1,0 +1,252 @@
+@use "variables";
+@use "./mixins" as mixins;
+@use "decoration";
+$s: 5px;
+.wrapper {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-bg-orange);
+  @media (min-width: 320px) and (max-width: 1023px) {
+    overflow: visible;
+  }
+
+  .header {
+    &__container {
+      width: 100%;
+
+      flex-flow: wrap;
+      @include mixins.flex($justify-c: space-between);
+      background-color: var(--color-bg-orange);
+      padding: 7px 35px;
+
+      @media (min-width: 1024px) and (max-width: 1919px) {
+        padding: 7px 20px;
+      }
+      @media (min-width: 320px) and (max-width: 1023px) {
+        padding: 7px 10px;
+        justify-content: center;
+      }
+
+      &-logo {
+        @include mixins.flex();
+
+        @media (min-width: 320px) and (max-width: 1023px) {
+          order: 2;
+        }
+        &-box {
+          img {
+            width: 40px;
+          }
+        }
+        h2 {
+          margin: 0;
+        }
+        &-name {
+          @media (min-width: 320px) and (max-width: 1023px) {
+            display: none;
+          }
+        }
+      }
+      &-nav {
+        transform: translateY(0%);
+        width: auto;
+        height: auto;
+        border-radius: none;
+
+        @media (min-width: 320px) and (max-width: 1023px) {
+          order: 1;
+          position: absolute;
+          width: 310px;
+          height: 0vh;
+          transform: translateY(-100vh);
+          transition-property: transform, border-radius, width, height;
+          transition-duration: 0.6s;
+          transition-timing-function: ease-in-out;
+          background: rgb(255, 255, 255);
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+          padding-top: 50px;
+          margin: 0 auto;
+          z-index: -1;
+        }
+
+        &-menu {
+          @include mixins.flex();
+          gap: 25px;
+          margin: 0 auto;
+
+          @media (min-width: 1024px) and (max-width: 1419px) {
+            gap: 15px;
+          }
+          @media (min-width: 320px) and (max-width: 1023px) {
+            flex-direction: column;
+          }
+
+          &-item {
+            a {
+              @media (min-width: 320px) and (max-width: 1023px) {
+                color: black;
+              }
+            }
+            span {
+              width: 100%;
+              height: 100%;
+
+              mat-icon {
+                width: 100%;
+                height: 100%;
+                font-size: 28px;
+                transition: transform 0.5s ease;
+                color: white;
+                @media (min-width: 320px) and (max-width: 1023px) {
+                  color: black;
+                }
+              }
+            }
+          }
+          &-item:first-child {
+            width: 28px;
+            height: 28px;
+          }
+          &-item:last-child {
+            width: 28px;
+            height: 28px;
+          }
+          &-item:hover mat-icon {
+            transform: scale(1.2, 1.2);
+          }
+          &-item:active {
+            @media (min-width: 320px) and (max-width: 1023px) {
+              color: orange;
+            }
+          }
+        }
+      }
+      &-nav.show {
+        @media (min-width: 320px) and (max-width: 1023px) {
+          transform: translateY(55%);
+          height: 100vh;
+        }
+      }
+
+      &-tel,
+      .tel {
+        @media (min-width: 320px) and (max-width: 1023px) {
+          order: 3;
+          margin-left: auto;
+        }
+
+        a {
+          color: var(--color-link-black);
+          transition: color 0.3s ease;
+          font-weight: 400;
+
+          span {
+            margin-right: 2px;
+            @media (min-width: 1420px) and (max-width: 1570px) {
+              margin-right: 0;
+            }
+            @media (min-width: 1024px) and (max-width: 1419px) {
+              margin-right: -5px;
+            }
+
+            @media (min-width: 320px) and (max-width: 1023px) {
+              margin-right: -5px;
+            }
+
+            mat-icon {
+              font-size: clamp(
+                0.875rem,
+                0.7875rem + 0.4375vw,
+                1.3125rem
+              ); //14-21 320-1920
+
+              height: 100%;
+              font-weight: 600;
+              margin-bottom: -3px;
+            }
+          }
+        }
+        a:hover {
+          color: var(--color-link-white);
+        }
+      }
+      &-burger {
+        display: none;
+        @media (min-width: 320px) and (max-width: 1023px) {
+          display: block;
+          color: rgb(0, 0, 0);
+          width: 40px;
+          height: 40px;
+          margin-right: 4px;
+        }
+
+        .burger-wrapper {
+          cursor: pointer;
+          position: relative;
+
+          .hamburger {
+            background: black;
+            width: 32px;
+            height: 2px;
+            position: relative;
+            transition: background 10ms 300ms ease;
+            margin: auto;
+            top: 4px;
+            border-radius: 10px;
+
+            &:before,
+            &:after {
+              transition: top 300ms 350ms ease, transform 300ms 50ms ease;
+              position: absolute;
+              background: black;
+              width: 32px;
+              height: 2px;
+              left: 0;
+              border-radius: 10px;
+              content: "";
+            }
+            &:before {
+              top: -12px;
+            }
+
+            &:after {
+              top: 12px;
+            }
+          }
+          .layer-click {
+            position: absolute;
+            z-index: 3;
+            width: 40px;
+            height: 40px;
+            top: -18px;
+          }
+        }
+
+        .menu-trigger:checked {
+          ~ .burger-wrapper {
+            .hamburger {
+              background: transparent;
+              &:after,
+              &:before {
+                transition: top 300ms 50ms ease, transform 300ms 350ms ease;
+                top: 0;
+              }
+              &:before {
+                transform: rotate(45deg);
+              }
+              &:after {
+                transform: rotate(-45deg);
+              }
+            }
+          }
+        }
+
+        .hidden {
+          display: none;
+        }
+      }
+    }
+  }
+}

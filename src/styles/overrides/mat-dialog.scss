@@ -1,0 +1,17 @@
+@use "variables";
+@use '@angular/material' as mat;
+
+:root {
+  @include mat.dialog-overrides(
+    (
+      container-color: var(--color-squash),
+      // container-color: var(--color-carrot-orange),
+      // container-color: var(--color-cantaloupe),
+      subhead-color: var(--color-black),
+      // supporting-text-color: green,
+      container-max-width: 100%,
+      container-min-width: 30%,
+      actions-alignment: center,
+    )
+  );
+}

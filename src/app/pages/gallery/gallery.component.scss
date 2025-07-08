@@ -1,0 +1,118 @@
+@use "variables";
+@use "./mixins" as mixins;
+
+.wrapper {
+  background-color: var(--color-bg-dark-gray);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.199);
+
+  .gallery {
+    height: 100%;
+    padding: 20px;
+    position: relative;
+
+    @media (min-width: 320px) and (max-width: 1023px) {
+      padding: 10px;
+    }
+    @media (min-width: 320px) and (max-width: 1023px) {
+      display: flex;
+      flex-direction: column;
+      flex-flow: wrap;
+    }
+    swiper-container {
+      width: 100%;
+      background-color: var(--color-bg-middle-two-gray);
+      box-shadow: 0 0 3px 0 var(--color-shadow-black-02);
+      border-radius: 10px;
+    }
+    swiper-slide {
+      width: 25%;
+      text-align: center;
+      @include mixins.flex();
+      border-radius: 5px;
+      padding: 5px;
+      border: solid 1px var(--color-border-black);
+      box-shadow: 5px 5px 5px var(--color-shadow-black-05);
+      background-color: var(--color-bg-dark-gray);
+
+      @media (min-width: 320px) and (max-width: 1023px) {
+        width: 95%;
+      }
+    }
+    swiper-slide:hover img,
+    swiper-slide:hover video {
+      filter: grayscale(0);
+    }
+    swiper-container::part(button-next),
+    swiper-container::part(button-prev) {
+      color: orange;
+    }
+    swiper-container::part(pagination) {
+      display: none;
+    }
+
+    img,
+    video {
+      filter: grayscale(60%);
+      border-radius: 5px;
+      transition: all 0.25s ease-in-out;
+    }
+    .gallery-box {
+      height: 100%;
+      width: 100%;
+    }
+
+    &__video {
+      margin-bottom: 20px;
+
+      @media (min-width: 320px) and (max-width: 1023px) {
+        order: 2;
+        margin-bottom: 0px;
+      }
+      &-swiper {
+        padding: 10px 0;
+
+        video {
+          width: 100%;
+          object-fit: cover;
+          cursor: pointer;
+          padding: 0px 0;
+        }
+      }
+    }
+
+    &__swiper {
+      @media (min-width: 320px) and (max-width: 1023px) {
+        order: 1;
+        margin-bottom: 10px;
+        position: relative;
+        z-index: 0;
+      }
+
+      swiper-slide {
+        margin: 40px 10px;
+        transform: scale(1, 1);
+        transition: transform 0.7s ease-in-out;
+
+        @media (min-width: 320px) and (max-width: 1023px) {
+          margin: 5px 0px;
+        }
+
+        &:hover {
+          border-color: var(--color-border-dark-orange);
+          transform: scale(1.1, 1.1);
+
+          @media (min-width: 320px) and (max-width: 1023px) {
+            transform: scale(1, 1);
+          }
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+      }
+    }
+  }
+}

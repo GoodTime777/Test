@@ -1,0 +1,110 @@
+<div class="wrapper">
+  <div class="content header">
+    <div class="header__container">
+      <div class="header__container-logo">
+        <div class="header__container-logo-box logo">
+          <a href="#" class="header__container-logo-box-img">
+            <img src="/assets/images/icons/logo-svg-border.svg" alt="logo" />
+          </a>
+        </div>
+        <h2 class="header__container-logo-name">ВЕРТИКАЛЬ</h2>
+      </div>
+      <button class="header__container-burger">
+        <input
+          class="menu-trigger hidden"
+          id="togglenav"
+          type="checkbox"
+          [checked]="isCheckboxChecked"
+        />
+        <label class="burger-wrapper" for="togglenav">
+          <div class="hamburger"></div>
+          <div class="layer-click" (click)="menuBurger()"></div>
+        </label>
+
+      </button>
+      <nav class="header__container-nav" [class.show]="show">
+        <ul class="header__container-nav-menu">
+          <li class="header__container-nav-menu-item">
+            <a
+              [routerLinkActiveOptions]="{ exact: true }"
+              routerLink=""
+              routerLinkActive="active"
+              (click)="menuBurgerClose()"
+            >
+              <span>
+                <mat-icon>cottage</mat-icon>
+              </span>
+            </a>
+          </li>
+          <li class="header__container-nav-menu-item">
+            <a
+              class="decor"
+              routerLink="services"
+              routerLinkActive="active"
+              (click)="menuBurgerClose()"
+            >
+              Услуги</a
+            >
+          </li>
+
+        
+          <li class="header__container-nav-menu-item">
+            <a
+              class="decor"
+              routerLink="calculator"
+              routerLinkActive="active"
+              (click)="menuBurgerClose()"
+              >Калькулятор</a
+            >
+          </li>
+          <li class="header__container-nav-menu-item">
+            <a
+              class="decor"
+              routerLink="gallery"
+              routerLinkActive="active"
+              (click)="menuBurgerClose()"
+              >Проекты</a
+            >
+          </li>
+          <li class="header__container-nav-menu-item">
+            <a
+              class="decor"
+              routerLink="contacts"
+              routerLinkActive="active"
+              (click)="menuBurgerClose()"
+              >Контакты</a
+            >
+          </li>
+         
+          <li class="header__container-nav-menu-item">
+            <button (click)="openDialog()" (click)="menuBurgerClose()">
+              <span>
+                <mat-icon>engineering</mat-icon>
+              </span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header__container-tel tel">
+        <div class="header__container-tel-item">
+          <a
+            href="tel:89201711771"
+            class="header__container-tel-item-link tel-one"
+          >
+            <span> <mat-icon>call</mat-icon> </span> 8-920-171-17-71
+          </a>
+        </div>
+        <div class="header__container-tel-item">
+          <a
+            href="tel:89043586195"
+            class="header__container-tel-item-link tel-two"
+          >
+            <span> <mat-icon>call</mat-icon> </span> 8-904-358-61-95
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

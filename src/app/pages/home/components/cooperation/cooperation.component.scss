@@ -1,0 +1,111 @@
+@use "variables";
+@use "./mixins" as mixins;
+
+.wrapper {
+  margin-bottom: 80px;
+
+  @media (min-width: 320px) and (max-width: 1600px) {
+    margin-bottom: 40px;
+  }
+
+  .cooperation {
+    padding: 0 60px;
+
+    @media (min-width: 320px) and (max-width: 1023px) {
+      padding: 0 10px;
+    }
+
+    &__title {
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      text-decoration: underline solid var(--color-squash);
+    }
+
+    &__wrapper {
+      width: 98.5%;
+
+      &-content {
+        &-list {
+          display: flex;
+          margin-bottom: 40px;
+
+          @media (min-width: 1024px) and (max-width: 1680px) {
+            margin-bottom: 25px;
+          }
+
+          @media (min-width: 320px) and (max-width: 1023px) {
+            @include mixins.flex();
+            flex-direction: column;
+            gap: 28px;
+            margin-bottom: 70px;
+          }
+
+          &-item {
+            position: relative;
+            margin-left: -0.1%;
+
+            @media (min-width: 320px) and (max-width: 1023px) {
+              margin-left: 0;
+            }
+
+            .spans {
+              top: 50%;
+              transform: translateY(-50%);
+              width: 100%;
+              position: absolute;
+              z-index: 10;
+              margin-left: 11%;
+
+              @media (min-width: 320px) and (max-width: 1023px) {
+                @include mixins.flex($align-i: flex-end);
+                gap: 10px;
+                margin-left: 0;
+                padding: 0 20px;
+                top: 70px;
+              }
+            }
+            span {
+              display: block;
+              text-align: center;
+            }
+
+            .red {
+              font-size: clamp(
+                1.875rem,
+                0.1607rem + 2.6786vw,
+                3.375rem
+              ); //30-54 1024-1920
+              font-weight: 200;
+              line-height: 1.15;
+              @media (min-width: 320px) and (max-width: 1023px) {
+                font-size: 50px;
+              }
+            }
+
+            .txts {
+              font-weight: 300;
+              font-size: clamp(
+                0.75rem,
+                0.0357rem + 1.1161vw,
+                1.375rem
+              ); //12-22 1024-1920
+              color: var(--color-text-white);
+              @media (min-width: 320px) and (max-width: 1023px) {
+                font-family: Oswald, "Helvetica Neue", sans-serif;
+                text-transform: uppercase;
+                font-size: 26px;
+                font-weight: 100;
+              }
+            }
+          }
+        }
+      }
+      &-btn {
+        text-align: right;
+
+
+     
+      }
+    }
+  }
+}

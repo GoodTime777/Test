@@ -1,0 +1,267 @@
+@use "variables";
+@use "./mixins" as mixins;
+
+.wrapper {
+  min-height: 500px;
+  box-shadow: 0 6px 10px var(--color-shadow-black-05);
+
+  @media (min-width: 1024px) and (max-width: 1420px) {
+    min-height: 400px;
+  }
+
+  @media (min-width: 320px) and (max-width: 1023px) {
+    max-width: 320px;
+    min-height: 400px;
+    overflow-x: hidden;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  .slider {
+    @media (min-width: 320px) and (max-width: 1023px) {
+      overflow: hidden;
+      position: relative;
+    }
+    &__icon {
+      display: none;
+
+      @media (min-width: 320px) and (max-width: 1023px) {
+        display: block;
+        position: absolute;
+        z-index: 2;
+        bottom: 10px;
+        left: 22px;
+      }
+
+      mat-icon {
+        font-size: 30px;
+        color: white;
+        @include mixins.size();
+        animation: color-icon 4s ease-in-out infinite;
+      }
+    }
+  }
+
+  .swiper {
+    @include mixins.size();
+
+    @media (min-width: 320px) and (max-width: 1023px) {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+
+    &__slide {
+      position: relative;
+      width: 100%;
+      min-height: 500px;
+      text-align: center;
+      background: var(--color-bg-dark-gray);
+      display: flex;
+      gap: 10px;
+
+      @media (min-width: 320px) and (max-width: 1023px) {
+        min-height: 400px;
+        color: var(--color-text-white);
+        background-repeat: no-repeat;
+        background-size: cover;
+        gap: 0;
+        padding: 10px;
+      }
+
+      &-slide {
+        position: absolute;
+        display: flex;
+        @include mixins.size($width: 61.5%);
+        top: 0;
+        gap: 10px;
+        padding: 10px;
+
+        @media (min-width: 1024px) and (max-width: 1300px) {
+          width: 60%;
+          gap: 0;
+        }
+
+        &-content {
+          width: 60%;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+
+          &-title {
+            color: var(--color-text-white);
+            line-height: 100%;
+            margin: 8px 8px 30px 8px;
+          }
+
+          &-txt {
+            padding: 0 10px;
+            margin-bottom: 40px;
+
+            @media (min-width: 1024px) and (max-width: 1300px) {
+              margin-bottom: 20px;
+            }
+          }
+
+          .btns {
+            width: 100%;
+          }
+        }
+        &-foto {
+          position: relative;
+          @include mixins.size($width: 38%);
+          box-shadow: 0px 0px 3px 2px var(--color-shadow-black);
+          background-repeat: no-repeat;
+          background-size: cover;
+
+          @media (min-width: 1024px) and (max-width: 1300px) {
+            width: 40%;
+          }
+          @media (min-width: 320px) and (max-width: 1023px) {
+            width: 100%;
+          }
+        }
+      }
+      &-content {
+        @media (min-width: 320px) and (max-width: 1023px) {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          border-radius: 5px;
+          background-color: rgba(29, 29, 29, 0.7);
+          padding: 5px;
+          height: auto;
+        }
+
+        &-title {
+          @media (min-width: 320px) and (max-width: 1023px) {
+            color: var(--color-text-white);
+            line-height: 1;
+            margin-bottom: 15px;
+          }
+        }
+
+        &-txt {
+          @media (min-width: 320px) and (max-width: 1023px) {
+            padding: 0 5px;
+            margin-bottom: 15px;
+          }
+        }
+        .btns {
+          @media (min-width: 320px) and (max-width: 1023px) {
+           // width: 100%;
+            justify-content: center;       
+          }
+        }
+      }
+    }
+  }
+  .slide-1 {
+    color: var(--color-text-white);
+    left: 0;
+    background: var(--color-bg-dark-gray);
+    transition: 1s left ease-in-out, 1s background ease;
+  }
+
+  .slide-2 {
+    right: 0%;
+    transition: 1s right ease-in-out, 1s background ease, 1s color ease;
+    z-index: 5;
+    color: var(--color-text-black);
+    background: var(--color-bg-light-orange);
+    box-shadow: 0 20px 5px 10px var(--color-shadow-black);
+
+    h1 {
+      color: var(--color-text-black);
+    }
+  }
+
+  .slide-1:hover {
+    background: var(--color-bg-middle-gray);
+  }
+  .slide-2:hover {
+    background: var(--color-bg-yellow);
+    color: var(--color-text-black);
+  }
+
+  .slide-1:hover + .slide-2 {
+    color: var(--color-text-white);
+    right: -18%;
+
+    @media (min-width: 1024px) and (max-width: 1289px) {
+      right: -25%;
+    }
+
+    @media (min-width: 320px) and (max-width: 1023px) {
+      right: -70%;
+    }
+  }
+
+  .foto-1 {
+    background-image: url(/assets/images/5.jpg);
+  }
+  .foto-2 {
+    background-image: url(/assets/images/6.jpg);
+  }
+  .foto-1,
+  .foto-2 {
+    @media (min-width: 1024px) and (max-width: 1300px) {
+      width: 40%;
+    }
+    @media (min-width: 320px) and (max-width: 1023px) {
+      width: 100%;
+    }
+  }
+
+  .swiper-slide-0 {
+    display: flex;
+    @media (min-width: 320px) and (max-width: 1023px) {
+      display: none;
+    }
+  }
+  .swiper-slide-1 {
+    background-image: url(/assets/images/5.jpg);
+  }
+  .swiper-slide-2 {
+    background-image: url(/assets/images/6.jpg);
+  }
+  .swiper-slide-1,
+  .swiper-slide-2 {
+    display: none;
+    @media (min-width: 320px) and (max-width: 1023px) {
+      display: block;
+    }
+  }
+
+  swiper-container::part(bullet-active) {
+    @include mixins.size($width: 0, $height: 0);
+    background-color: transparent;
+    @media (min-width: 320px) and (max-width: 1023px) {
+      @include mixins.size($width: 10px, $height: 10px);
+
+      background-color: orange;
+    }
+  }
+  swiper-container::part(bullet) {
+    @include mixins.size($width: 0, $height: 0);
+    background-color: transparent;
+
+    @media (min-width: 320px) and (max-width: 1023px) {
+      @include mixins.size($width: 8px, $height: 8px);
+      background: rgb(255, 255, 255);
+      opacity: 0.7;
+    }
+  }
+  @keyframes color-icon {
+    0% {
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+}
