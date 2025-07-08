@@ -3,8 +3,7 @@
 
 .wrapper {
   height: 500px;
-   box-shadow: 0 6px 10px var(--color-shadow-black-05);
-
+   overflow: visible;
   @media (min-width: 768px) and (max-width: 1599px) {
     height: 400px;
   }
@@ -18,9 +17,7 @@
   }
 
   .slider {
-   // box-shadow: 0 6px 10px var(--color-shadow-black-05);
-    @media (min-width: 768px) and (max-width: 1599px) {
-    }
+ box-shadow: -1px 6px 8px 0px var(--color-shadow-black-05);
     @media (max-width: 767px) {
       overflow: hidden;
       position: relative;
