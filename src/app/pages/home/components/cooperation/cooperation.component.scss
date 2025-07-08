@@ -4,14 +4,17 @@
 .wrapper {
   margin-bottom: 80px;
 
-  @media (min-width: 320px) and (max-width: 1600px) {
+  @media (max-width: 1599px) {
     margin-bottom: 40px;
   }
 
   .cooperation {
     padding: 0 60px;
+    @media (min-width: 768px) and (max-width: 1599px) {
+      padding: 0 40px;
+    }
 
-    @media (min-width: 320px) and (max-width: 1023px) {
+    @media (max-width: 767px) {
       padding: 0 10px;
     }
 
@@ -29,11 +32,11 @@
           display: flex;
           margin-bottom: 40px;
 
-          @media (min-width: 1024px) and (max-width: 1680px) {
+          @media (min-width: 768px) and (max-width: 1599px) {
             margin-bottom: 25px;
           }
 
-          @media (min-width: 320px) and (max-width: 1023px) {
+          @media (max-width: 767px) {
             @include mixins.flex();
             flex-direction: column;
             gap: 28px;
@@ -43,8 +46,14 @@
           &-item {
             position: relative;
             margin-left: -0.1%;
+            @media (min-width: 768px) and (max-width: 1599px) {
+              margin-left: -4px;
+              @media (min-width: 768px) and (max-width: 1599px) {
+                white-space: normal;
+              }
+            }
 
-            @media (min-width: 320px) and (max-width: 1023px) {
+            @media (max-width: 767px) {
               margin-left: 0;
             }
 
@@ -55,8 +64,11 @@
               position: absolute;
               z-index: 10;
               margin-left: 11%;
+              @media (min-width: 768px) and (max-width: 1599px) {
+                white-space: normal;
+              }
 
-              @media (min-width: 320px) and (max-width: 1023px) {
+              @media (max-width: 767px) {
                 @include mixins.flex($align-i: flex-end);
                 gap: 10px;
                 margin-left: 0;
@@ -70,27 +82,25 @@
             }
 
             .red {
-              font-size: clamp(
-                1.875rem,
-                0.1607rem + 2.6786vw,
-                3.375rem
-              ); //30-54 1024-1920
+              font-size: 54px;
               font-weight: 200;
               line-height: 1.15;
-              @media (min-width: 320px) and (max-width: 1023px) {
+              @media (min-width: 768px) and (max-width: 1599px) {
+                font-size: 32px;
+              }
+              @media (max-width: 767px) {
                 font-size: 50px;
               }
             }
 
             .txts {
               font-weight: 300;
-              font-size: clamp(
-                0.75rem,
-                0.0357rem + 1.1161vw,
-                1.375rem
-              ); //12-22 1024-1920
+              font-size: 22px;
               color: var(--color-text-white);
-              @media (min-width: 320px) and (max-width: 1023px) {
+              @media (min-width: 768px) and (max-width: 1599px) {
+                font-size: 12px;
+              }
+              @media (max-width: 767px) {
                 font-family: Oswald, "Helvetica Neue", sans-serif;
                 text-transform: uppercase;
                 font-size: 26px;
@@ -102,9 +112,7 @@
       }
       &-btn {
         text-align: right;
-
-
-     
+        width: 101.5%;
       }
     }
   }

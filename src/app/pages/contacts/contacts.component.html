@@ -54,12 +54,9 @@
         <div class="contacts__contacts-contact-address">
           <h2 class="contacts__contacts-contact-address-title">Адрес</h2>
           <p class="contacts__contacts-contact-txt txt">Где-то в Твери</p>
-         
         </div>
       </div>
       <div class="contacts__contacts-map">
-  
-
         <iframe
           src="https://yandex.ru/map-widget/v1/?um=constructor%3Aff2156f2b429a6fc6234b28b3c6088b9993faa9d73edb08298a5f8544bacdb7f&amp;source=constructor"
           width="400"
@@ -70,7 +67,7 @@
 
       <div class="contacts__contacts-buttons btns">
         <div class="contacts__contacts-buttons-btn btn">
-          <button  class="btn-black" (click)="openDialog()">
+          <button class="btn-black" (click)="openDialog()">
             Оставить заявку
           </button>
         </div>
@@ -85,45 +82,6 @@
       </div>
     </div>
   </div>
-  <div class="background">
-    <div class="background__bg"></div>
-    <div class="background__bg"></div>
-    <div class="background__bg"></div>
-  </div>
-  <div class="loop-wrapper">
-    <div class="loop-wrapper__mountain"></div>
-    <div class="loop-wrapper__hill"></div>
-    <div class="loop-wrapper__tree">
-      <div class="loop-wrapper__tree-bottom tree-bottom"></div>
-      <div class="loop-wrapper__tree-top tree-top"></div>
-    </div>
-    <div class="loop-wrapper__tree">
-      <div class="loop-wrapper__tree-bottom tree-bottom"></div>
-      <div class="loop-wrapper__tree-top tree-top"></div>
-    </div>
-    <div class="loop-wrapper__tree">
-      <div class="loop-wrapper__tree-bottom tree-bottom"></div>
-      <div class="loop-wrapper__tree-top tree-top"></div>
-    </div>
-    <div class="loop-wrapper__rock"></div>
-    <div class="loop-wrapper__truck">
-      <div class="loop-wrapper__truck-detail-one">
-        <div class="loop-wrapper__truck-detail-one-top"></div>
-        <div class="loop-wrapper__truck-detail-one-left"></div>
-        <div class="loop-wrapper__truck-detail-one-right"></div>
-        <div class="loop-wrapper__truck-detail-one-circle circle"></div>
-      </div>
-      <div class="loop-wrapper__truck-detail-two">
-        <div class="loop-wrapper__truck-detail-two-window"></div>
-        <div class="loop-wrapper__truck-detail-two-left"></div>
-        <div class="loop-wrapper__truck-detail-two-top"></div>
-        <div class="loop-wrapper__truck-detail-two-bottom"></div>
-        <div class="loop-wrapper__truck-detail-two-circle circle"></div>
-      </div>
-    </div>
-    <div class="loop-wrapper__wheels">
-      <div class="loop-wrapper__wheels-wheel"></div>
-      <div class="loop-wrapper__wheels-wheel"></div>
-    </div>
-  </div>
+  <app-background />
+  <app-truck />
 </section>

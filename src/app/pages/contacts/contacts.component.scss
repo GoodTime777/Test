@@ -7,11 +7,17 @@
   justify-content: space-between;
   padding: 30px 40px 0px 40px;
 
-  @media (min-width: 320px) and (max-width: 1023px) {
+  @media (min-width: 768px) and (max-width: 1599px) {
+    padding: 20px 20px 0px 20px;
+    flex-direction: column;
+  }
+
+  @media (max-width: 767px) {
     flex-flow: wrap;
     padding: 10px 10px 0px 10px;
     justify-content: center;
   }
+
   h2 {
     margin-bottom: 0px;
   }
@@ -23,7 +29,7 @@
     gap: 7px;
     padding: 20px;
 
-    @media (min-width: 320px) and (max-width: 1023px) {
+    @media (max-width: 767px) {
       padding: 10px 10px;
     }
   }
@@ -32,19 +38,16 @@
     width: 52%;
     border-radius: 16px;
 
-    @media (min-width: 1300px) and (max-width: 1480px) {
-      width: 57.5%;
+    @media (min-width: 768px) and (max-width: 1599px) {
+      width: 100%;
     }
-    @media (min-width: 1024px) and (max-width: 1299px) {
-      width: 65%;
-    }
-    @media (min-width: 320px) and (max-width: 1023px) {
+    @media (max-width: 767px) {
       order: 2;
       width: 100%;
     }
 
     &-content {
-      color: var(--color-text-gray);
+      color: var(--color-text-black);
       background: var(--color-bg-glass);
       border-radius: 16px;
       box-shadow: 0 4px 10px var(--color-shadow-black-05);
@@ -54,16 +57,21 @@
       transition: background 0.7s ease, transform 0.7s ease,
         box-shadow 0.7s ease;
 
-      @media (min-width: 320px) and (max-width: 1023px) {
+      @media (max-width: 767px) {
       }
 
       &:hover {
         color: var(--color-text-black);
         background: var(--color-bg-glass-hover-orange);
         box-shadow: 0 4px 30px var(--color-shadow-black-02);
-        transform: translate(10px, -14px);
+        transform: translate(8px, -5px);
 
-        @media (min-width: 320px) and (max-width: 1023px) {
+        @media (min-width: 768px) and (max-width: 1599px) {
+          //  transform: translate(0px, 0px), scale(1.01, 1.01);
+          transform: scale(1.005, 1.005);
+        }
+
+        @media (max-width: 767px) {
           transform: translate(0px, 0px);
           color: var(--color-text-gray);
           background: var(--color-bg-glass);
@@ -77,8 +85,11 @@
     width: 50%;
     text-align: center;
     flex-direction: column;
+    @media (min-width: 768px) and (max-width: 1599px) {
+      width: 100%;
+    }
 
-    @media (min-width: 320px) and (max-width: 1023px) {
+    @media (max-width: 767px) {
       order: 1;
       width: 100%;
     }
@@ -117,43 +128,45 @@
       width: 100%;
       margin-bottom: 20px;
       iframe {
-        @media (min-width: 1024px) and (max-width: 1299px) {
+        @media (min-width: 768px) and (max-width: 1599px) {
           width: 85%;
         }
-        @media (min-width: 320px) and (max-width: 1023px) {
+        @media (max-width: 767px) {
           width: 100%;
         }
       }
     }
 
     &-buttons {
-      @media (min-width: 1024px) and (max-width: 1299px) {
+      @media (min-width: 768px) and (max-width: 1599px) {
         margin-bottom: 10px;
+        flex-direction: row;
+        gap: 10px;
       }
-      @media (min-width: 320px) and (max-width: 1023px) {
+      @media (max-width: 767px) {
         width: 100%;
         gap: 0;
       }
 
       &-btn {
-        @media (min-width: 320px) and (max-width: 1023px) {
+        @media (max-width: 767px) {
           width: 100%;
         }
         button {
-          @media (min-width: 320px) and (max-width: 1023px) {
+          @media (max-width: 767px) {
             background-color: black;
             color: white;
             border: none;
           }
         }
         button:hover {
-          @media (min-width: 320px) and (max-width: 1023px) {
+          @media (max-width: 767px) {
             background-color: rgb(0, 0, 0);
             color: white;
           }
         }
         button:active {
-          @media (min-width: 320px) and (max-width: 1023px) {
+          @media (max-width: 767px) {
             background-color: white;
             color: black;
           }

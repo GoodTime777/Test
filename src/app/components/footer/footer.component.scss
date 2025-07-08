@@ -10,7 +10,11 @@
     display: flex;
     justify-content: space-between;
 
-    @media (min-width: 320px) and (max-width: 1023px) {
+    @media (min-width: 768px) and (max-width: 1599px) {
+      padding: 15px 25px;
+    }
+
+    @media (max-width: 767px) {
       padding: 8px 10px 25px 10px;
       display: grid;
       grid-template-areas: "A" "B";
@@ -21,17 +25,17 @@
     p {
       font-size: clamp(0.875rem, 0.7321rem + 0.2232vw, 1rem); //14-16 1024-1920
 
-      @media (min-width: 320px) and (max-width: 1023px) {
+      @media (max-width: 767px) {
         font-size: 14px;
       }
     }
 
     &__right {
       width: 50%;
-      @media (min-width: 1024px) and (max-width: 1380px) {
-        width: 62%;
+      @media (min-width: 768px) and (max-width: 1599px) {
+        width: 75%;
       }
-      @media (min-width: 320px) and (max-width: 1023px) {
+      @media (max-width: 767px) {
         width: 100%;
         grid-area: A;
         position: relative;
@@ -39,22 +43,32 @@
       }
       &-info {
         display: flex;
-        @media (min-width: 320px) and (max-width: 1023px) {
+
+        @media (min-width: 768px) and (max-width: 1599px) {
+          position: relative;
+          display: grid;
+          grid-template-areas: "A B" "A C";
+        }
+
+        @media (max-width: 767px) {
           flex-direction: column;
           width: 100%;
           gap: 10px;
         }
 
-        &-schedule {        
+        &-schedule {
           @include mixins.flex();
           flex-direction: column;
           margin-right: 15px;
 
-          @media (min-width: 1024px) and (max-width: 1700px) {
+          @media (min-width: 768px) and (max-width: 1599px) {
+            margin-bottom: auto;
             margin-right: 10px;
+            grid-area: A;
+            // background-color: pink;
           }
-          
-          @media (min-width: 320px) and (max-width: 1023px) {
+
+          @media (max-width: 767px) {
             margin-right: 0;
           }
 
@@ -62,12 +76,15 @@
             color: var(--color-texas-rose);
             font-weight: 300;
             border-bottom: 1px solid var(--color-texas-rose);
+            @media (min-width: 768px) and (max-width: 1599px) {
+              margin-bottom: 8px;
+            }
           }
 
           &-description {
             color: var(--color-text-white);
             &-detail-one {
-              @media (min-width: 320px) and (max-width: 1023px) {
+              @media (max-width: 767px) {
                 color: var(--color-texas-rose);
               }
             }
@@ -76,8 +93,10 @@
         &-box {
           margin: 0 15px;
 
-          @media (min-width: 1024px) and (max-width: 1700px) {
+          @media (min-width: 768px) and (max-width: 1599px) {
             margin: 0 10px;
+            grid-area: B;
+            // background-color: green;
           }
 
           &-address {
@@ -89,6 +108,9 @@
               text-align: center;
               gap: 10px;
               margin-bottom: 5px;
+              @media (min-width: 768px) and (max-width: 1599px) {
+                margin-bottom: 0;
+              }
 
               &-txt {
                 text-align: left;
@@ -96,13 +118,9 @@
                 a {
                   position: relative;
                   word-wrap: break-word;
-                   @include mixins.flex();
+                  @include mixins.flex();
                   gap: 5px;
 
-                  // @media (min-width: 320px) and (max-width: 1023px) {
-                  //   justify-content: center;
-                  //   align-items: center;
-                  // }
                   img {
                     width: 22px;
                     height: 22px;
@@ -111,12 +129,19 @@
               }
 
               &-tel {
+                @media (min-width: 768px) and (max-width: 1599px) {
+                  width: 53%;
+                }
+
                 a {
                   display: flex;
                   gap: 5px;
                   transition: color 0.5s ease;
+                  @media (min-width: 768px) and (max-width: 1599px) {
+                    display: inline;
+                  }
 
-                  @media (min-width: 320px) and (max-width: 1023px) {
+                  @media (max-width: 767px) {
                     color: var(--color-texas-rose);
                   }
 
@@ -141,10 +166,16 @@
           margin-left: auto;
           margin-right: 10px;
 
-          @media (min-width: 1024px) and (max-width: 1700px) {
+          @media (min-width: 768px) and (max-width: 1599px) {
             margin-right: 5px;
+            grid-area: C;
+            flex-direction: row;
+            position: absolute;
+            right: 0;
+            bottom: 6px;
           }
-          @media (min-width: 320px) and (max-width: 1023px) {
+
+          @media (max-width: 767px) {
             position: absolute;
             bottom: 12px;
             right: 0;
@@ -175,10 +206,12 @@
       width: 4%;
       margin: auto 0;
 
-      @media (min-width: 1024px) and (max-width: 1240px) {
+      @media (min-width: 768px) and (max-width: 1599px) {
         width: 7%;
+        margin: auto 0 -2px 0;
       }
-      @media (min-width: 320px) and (max-width: 1023px) {
+
+      @media (max-width: 767px) {
         width: 50px;
         position: absolute;
         bottom: 24%;
@@ -200,10 +233,10 @@
       flex-direction: column;
       justify-content: space-between;
 
-      @media (min-width: 1024px) and (max-width: 1380px) {
+      @media (min-width: 768px) and (max-width: 1599px) {
         width: 40%;
       }
-      @media (min-width: 320px) and (max-width: 1023px) {
+      @media (max-width: 767px) {
         width: 100%;
         grid-area: B;
         flex-direction: row;
@@ -216,7 +249,7 @@
           text-align: right;
           display: flex;
           gap: 15px;
-          @media (min-width: 320px) and (max-width: 1023px) {
+          @media (max-width: 767px) {
             gap: 6px;
             flex-direction: column;
             justify-content: center;
@@ -225,7 +258,7 @@
 
           &-item {
             &-link {
-              @media (min-width: 320px) and (max-width: 1023px) {
+              @media (max-width: 767px) {
                 border-bottom: 1px dashed var(--color-texas-rose);
                 font-size: 13px !important;
               }
@@ -233,7 +266,7 @@
             .mat-icon {
               transition: color 0.3s ease-in-out;
               color: var(--color-text-white);
-              @media (min-width: 320px) and (max-width: 1023px) {
+              @media (max-width: 767px) {
                 color: var(--color-texas-rose);
               }
             }
@@ -246,7 +279,7 @@
       &-docs {
         margin-left: auto;
         text-align: right;
-        @media (min-width: 320px) and (max-width: 1023px) {
+        @media (max-width: 767px) {
           display: flex;
           justify-content: flex-end;
           flex-direction: column;
@@ -255,7 +288,7 @@
         &-copyright {
           &-txt {
             color: var(--color-text-white);
-            @media (min-width: 320px) and (max-width: 1023px) {
+            @media (max-width: 767px) {
               font-size: 13px !important;
             }
           }
@@ -263,14 +296,14 @@
         &-privacy {
           &-link {
             transition: color 0.3s ease-in-out;
-            @media (min-width: 320px) and (max-width: 1023px) {
+            @media (max-width: 767px) {
               border-bottom: 1px dashed var(--color-texas-rose);
               font-size: 13px !important;
             }
           }
           &-link:hover {
             color: var(--color-texas-rose);
-            @media (min-width: 320px) and (max-width: 1023px) {
+            @media (max-width: 767px) {
               color: var(--color-text-white);
             }
           }
@@ -286,7 +319,7 @@
 
   .line,
   .decor::after {
-    @media (min-width: 320px) and (max-width: 1023px) {
+    @media (max-width: 767px) {
       display: none;
     }
   }

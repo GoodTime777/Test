@@ -7,16 +7,16 @@ body {
   min-height: 100vh;
   background: var(--color-seashell);
   margin: 0 auto;
-  padding-top: 66px;
+  padding-top: 62px;
 
-  @media (min-width: 1024px) and (max-width: 1919px) {
+  @media (min-width: 768px) and (max-width: 1599px) {
     padding-top: 60px;
   }
-  @media (min-width: 320px) and (max-width: 1023px) {
-    padding-top: 61px;
+  @media (max-width: 767px) {
+    padding-top: 57px;
   }
 
-  @media (min-width: 320px) and (max-width: 1023px) {
+  @media (max-width: 767px) {
   }
 }
 
@@ -35,12 +35,21 @@ h4 {
 }
 
 h1 {
-  font-size: clamp(1.625rem, 1.35rem + 1.375vw, 3rem); //26-48 320-1920
+  font-size: 48px;
+  // font-size: clamp(1.625rem, 0.3558rem + 2.6442vw, 3rem);//26-48
+  @media (min-width: 768px) and (max-width: 1599px) {
+    font-size: 30px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 30px;
+  }
 }
 
 h2 {
   font-size: clamp(1.375rem, 1.2rem + 0.875vw, 2.25rem); //22-36 320-1920
   margin-bottom: 20px;
+
   @media (min-width: 320px) and (max-width: 1220px) {
     margin-bottom: 10px;
   }
@@ -54,19 +63,44 @@ h4 {
 }
 th {
   font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1.25rem);
-}
-
-mat-error {
-  font-size: 12px;
-  color: var(--color-error);
+    @media (min-width: 768px) and (max-width: 1599px) {
+    font-size: 16px;
+  }
+  @media (max-width: 767px) {
+    font-size: 14px;
+  }
 }
 
 a,
 button {
   cursor: pointer;
- 
-  font-size: clamp(0.875rem, 0.5893rem + 0.4464vw, 1.125rem); //14-18 320-1920
+  font-size: 18px;
+  //font-size: clamp(0.875rem, 0.5893rem + 0.4464vw, 1.125rem); //14-18 320-1920
+
+  @media (min-width: 768px) and (max-width: 1599px) {
+    font-size: 14px;
+  }
+  @media (max-width: 767px) {
+    font-size: 14px;
+  }
 }
+
+th,
+.header-logo,
+.result,
+.red,
+.btn-decor-flash,
+.btn-decor-flash-black {
+  font-family: Oswald, "Helvetica Neue", sans-serif;
+}
+p {
+ // font-weight: 300;
+}
+mat-error {
+  font-size: 12px;
+  color: var(--color-error);
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -87,10 +121,14 @@ a {
 
 .content {
   width: 100%;
-  max-width: 1920px;
+  max-width: 1600px; //1920px;
   margin: 0 auto;
 
-  @media (min-width: 320px) and (max-width: 1023px) {
+  @media (min-width: 768px) and (max-width: 1599px) {
+    max-width: 768px;
+  }
+
+  @media (max-width: 767px) {
     max-width: 320px;
   }
 }
@@ -100,6 +138,10 @@ a {
   @media (min-width: 320px) and (max-width: 1620px) {
     margin-bottom: 10px;
   }
+
+   @media  (max-width: 767px){
+width: 100%;
+   }
   button {
     min-width: 240px;
     text-align: center;
@@ -107,7 +149,11 @@ a {
     padding: 15px 0;
     transition: color 0.4s ease, border 0.4s ease, background-color 0.4s ease;
 
-    @media (min-width: 320px) and (max-width: 1023px) {
+    @media (min-width: 768px) and (max-width: 1599px) {
+      padding: 12px 0;
+    }
+
+    @media (max-width: 767px) {
       width: 100%;
     }
   }
@@ -119,7 +165,7 @@ a {
   a {
     color: var(--color-black);
 
-    @media (min-width: 320px) and (max-width: 1023px) {
+    @media (max-width: 767px) {
       color: var(--color-seashell);
     }
   }
@@ -132,7 +178,7 @@ a {
   a {
     color: var(--color-seashell);
 
-    // @media (min-width: 320px) and (max-width: 1023px) {
+    // @media (max-width: 767px) {
     //   color: var(--color-seashell);
     // }
   }
@@ -145,7 +191,7 @@ a {
 
   a {
     color: var(--color-black);
-    @media (min-width: 320px) and (max-width: 1023px) {
+    @media (max-width: 767px) {
       color: var(--color-seashell);
     }
   }
@@ -182,7 +228,7 @@ a {
   color: var(--color-black);
   border: 1px solid var(--color-border-black);
 
-  @media (min-width: 320px) and (max-width: 1023px) {
+  @media (max-width: 767px) {
     background-color: rgba(255, 187, 61, 1);
     border: 1px solid transparent;
   }
@@ -190,7 +236,7 @@ a {
   a {
     color: var(--color-black);
 
-    @media (min-width: 320px) and (max-width: 1023px) {
+    @media (max-width: 767px) {
       color: var(--color-seashell);
     }
   }
@@ -212,7 +258,7 @@ a {
 
   a {
     color: var(--color-black);
-    @media (min-width: 320px) and (max-width: 1023px) {
+    @media (max-width: 767px) {
       color: var(--color-seashell);
     }
   }
@@ -222,12 +268,12 @@ a {
   @include mixins.flex();
   gap: 15px;
 
-  @media (min-width: 1024px) and (max-width: 1300px) {
+  @media (min-width: 768px) and (max-width: 1599px) {
     flex-direction: column;
     gap: 0px;
   }
 
-  @media (min-width: 320px) and (max-width: 1023px) {
+  @media (max-width: 767px) {
     width: 100%;
     flex-direction: column;
     gap: 5px;
@@ -235,7 +281,7 @@ a {
 }
 
 .red {
-  font-family: Oswald, "Helvetica Neue", sans-serif;
+  // font-family: Oswald, "Helvetica Neue", sans-serif;
   color: var(--color-bittersweet);
 }
 
@@ -244,14 +290,36 @@ a {
   background: transparent; /* optional: just make scrollbar invisible */
 }
 .main-txt {
-  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem); //16-20 320-1920
+  //font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem); //16-20 320-1920
+  // font-size: clamp(1rem, 0.7692rem + 0.4808vw, 1.25rem); //16-20
+  font-size: clamp(0.875rem, 0.5288rem + 0.7212vw, 1.25rem);
+  @media (min-width: 768px) and (max-width: 1599px) {
+    font-size: 14px;
+  }
+  @media (max-width: 767px) {
+    font-size: 16px; //16
+    font-weight: 300;
+  }
 }
 
 .emphasized-txt {
   //Выделенный
   font-size: clamp(1rem, 0.925rem + 0.375vw, 1.375rem); //16-22 320-1920
+   @media (min-width: 768px) and (max-width: 1599px) {
+    font-size: 16px;
+  }
+  @media (max-width: 767px) {
+    font-size: 16px; //16
+  }
 }
 
 .txt {
-  font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1.25rem); //14-20 320-1920
+  //  font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1.25rem); //14-20 320-1920
+  font-size: clamp(1rem, 0.7692rem + 0.4808vw, 1.25rem); //16-20
+  @media (min-width: 768px) and (max-width: 1599px) {
+    font-size: 16px;
+    font-weight: 300;}
+  @media (max-width: 767px) {
+    font-size: 14px;
+  }
 }

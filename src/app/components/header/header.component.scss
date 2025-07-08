@@ -1,50 +1,56 @@
 @use "variables";
 @use "./mixins" as mixins;
 @use "decoration";
+
 $s: 5px;
+
 .wrapper {
   position: fixed;
   top: 0;
   z-index: 100;
   background-color: var(--color-bg-orange);
-  @media (min-width: 320px) and (max-width: 1023px) {
+  @media  (max-width: 767px) {
     overflow: visible;
   }
 
   .header {
     &__container {
       width: 100%;
-
       flex-flow: wrap;
       @include mixins.flex($justify-c: space-between);
       background-color: var(--color-bg-orange);
       padding: 7px 35px;
 
-      @media (min-width: 1024px) and (max-width: 1919px) {
-        padding: 7px 20px;
+      @media (min-width: 768px) and (max-width: 1599px) {
+        padding: 7px 10px;//7px 10px 7px 5px;
       }
-      @media (min-width: 320px) and (max-width: 1023px) {
+      @media  (max-width: 767px) {
         padding: 7px 10px;
         justify-content: center;
       }
 
       &-logo {
-        @include mixins.flex();
-
-        @media (min-width: 320px) and (max-width: 1023px) {
+        @media  (max-width: 767px) {
           order: 2;
         }
         &-box {
+          &-img {
+            @include mixins.flex();
+            &-name {
+              @media  (max-width: 767px) {
+                display: none;
+              }
+            }
+          }
           img {
             width: 40px;
+            padding-bottom: 4px;
+            @media  (max-width: 767px) {
+              padding-bottom: 0;
+            }
           }
-        }
-        h2 {
-          margin: 0;
-        }
-        &-name {
-          @media (min-width: 320px) and (max-width: 1023px) {
-            display: none;
+          h2 {
+            margin: 0;
           }
         }
       }
@@ -54,7 +60,7 @@ $s: 5px;
         height: auto;
         border-radius: none;
 
-        @media (min-width: 320px) and (max-width: 1023px) {
+        @media  (max-width: 767px) {
           order: 1;
           position: absolute;
           width: 310px;
@@ -76,16 +82,16 @@ $s: 5px;
           gap: 25px;
           margin: 0 auto;
 
-          @media (min-width: 1024px) and (max-width: 1419px) {
+          @media (min-width: 768px) and (max-width: 1599px) {
             gap: 15px;
           }
-          @media (min-width: 320px) and (max-width: 1023px) {
+          @media  (max-width: 767px) {
             flex-direction: column;
           }
 
           &-item {
             a {
-              @media (min-width: 320px) and (max-width: 1023px) {
+              @media  (max-width: 767px) {
                 color: black;
               }
             }
@@ -99,7 +105,7 @@ $s: 5px;
                 font-size: 28px;
                 transition: transform 0.5s ease;
                 color: white;
-                @media (min-width: 320px) and (max-width: 1023px) {
+                @media  (max-width: 767px) {
                   color: black;
                 }
               }
@@ -117,14 +123,14 @@ $s: 5px;
             transform: scale(1.2, 1.2);
           }
           &-item:active {
-            @media (min-width: 320px) and (max-width: 1023px) {
+            @media  (max-width: 767px) {
               color: orange;
             }
           }
         }
       }
       &-nav.show {
-        @media (min-width: 320px) and (max-width: 1023px) {
+        @media  (max-width: 767px) {
           transform: translateY(55%);
           height: 100vh;
         }
@@ -132,7 +138,7 @@ $s: 5px;
 
       &-tel,
       .tel {
-        @media (min-width: 320px) and (max-width: 1023px) {
+        @media  (max-width: 767px) {
           order: 3;
           margin-left: auto;
         }
@@ -147,11 +153,11 @@ $s: 5px;
             @media (min-width: 1420px) and (max-width: 1570px) {
               margin-right: 0;
             }
-            @media (min-width: 1024px) and (max-width: 1419px) {
+            @media (min-width: 768px) and (max-width: 1419px) {
               margin-right: -5px;
             }
 
-            @media (min-width: 320px) and (max-width: 1023px) {
+            @media  (max-width: 767px) {
               margin-right: -5px;
             }
 
@@ -174,7 +180,7 @@ $s: 5px;
       }
       &-burger {
         display: none;
-        @media (min-width: 320px) and (max-width: 1023px) {
+        @media  (max-width: 767px) {
           display: block;
           color: rgb(0, 0, 0);
           width: 40px;
@@ -245,6 +251,7 @@ $s: 5px;
 
         .hidden {
           display: none;
+           -webkit-display: none;
         }
       }
     }

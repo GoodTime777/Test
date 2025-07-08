@@ -4,18 +4,22 @@
 .wrapper {
   margin-bottom: 80px;
 
-  @media (min-width: 1024px) and (max-width: 1600px) {
+  @media (min-width: 768px) and (max-width: 1599px) {
     margin-bottom: 40px;
   }
 
-  @media (min-width: 320px) and (max-width: 1023px) {
+  @media (max-width: 767px) {
     margin-bottom: 40px;
   }
 
   .technologies {
     padding: 0 60px;
 
-    @media (min-width: 320px) and (max-width: 1023px) {
+    @media (min-width: 768px) and (max-width: 1599px){
+      padding: 0 40px;
+    }
+
+    @media (max-width: 767px) {
       padding: 0 10px;
     }
 
@@ -37,7 +41,11 @@
           float: right;
           shape-outside: polygon(20% 0, 100% 0%, 100% 100%, 0 100%);
 
-          @media (min-width: 320px) and (max-width: 1023px) {
+           @media (min-width: 768px) and (max-width: 1599px){
+            width: 48%;
+           }
+
+          @media (max-width: 767px) {
             display: none;
           }
 

@@ -5,7 +5,7 @@ import { SliderComponent } from './components/slider/slider.component';
 import { CooperationComponent } from './components/cooperation/cooperation.component';
 import { BenefitComponent } from './components/benefit/benefit.component';
 import { AdvantageComponent } from './components/advantage/advantage.component';
-import { BackgroundComponent } from './components/background/background.component';
+import { BackgroundComponent } from '../background/background.component';
 
 @Component({
   selector: 'app-home',

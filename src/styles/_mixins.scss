@@ -59,12 +59,21 @@
 //  *   }
 //  * }
 //  */
-// @mixin mobile($max-mobile-width: 767px) {
-//   @media (max-width: $max-mobile-width) {
-//     @content;
-//   }
-// }
-
+@mixin mobile($max-mobile-width: 767px) {
+   @media (max-width: $max-mobile-width) {
+  //   @content;
+   }
+}
+@mixin tablet($min-tablet-width: 768px) {
+  @media (min-width: $min-tablet-width) {
+ //   @content;
+  }
+}
+@mixin desktop($min-desktop-width: 1600px) {
+  @media (min-width: $min-desktop-width) {
+ //   @content;
+  }
+}
 // /**
 //  * Миксин для настольных устройств.
 //  *
@@ -76,11 +85,7 @@
 //  *   }
 //  * }
 //  */
-// @mixin desktop($min-desktop-width: 768px) {
-//   @media (min-width: $min-desktop-width) {
-//     @content;
-//   }
-// }
+
 
 // /**
 //  * Миксин для устройств с сенсорным экраном.

@@ -2,35 +2,37 @@
 @use "./mixins" as mixins;
 
 .wrapper {
-  min-height: 500px;
+  height: 500px;
   box-shadow: 0 6px 10px var(--color-shadow-black-05);
 
-  @media (min-width: 1024px) and (max-width: 1420px) {
-    min-height: 400px;
+  @media (min-width: 768px) and (max-width: 1599px) {
+    height: 400px;
   }
 
-  @media (min-width: 320px) and (max-width: 1023px) {
+  @media (max-width: 767px) {
     max-width: 320px;
-    min-height: 400px;
-    overflow-x: hidden;
+    height: 450px;
+    // overflow-x: hidden;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
   }
 
   .slider {
-    @media (min-width: 320px) and (max-width: 1023px) {
+    @media (min-width: 768px) and (max-width: 1599px) {
+    }
+    @media (max-width: 767px) {
       overflow: hidden;
       position: relative;
     }
     &__icon {
       display: none;
 
-      @media (min-width: 320px) and (max-width: 1023px) {
+      @media (max-width: 767px) {
         display: block;
         position: absolute;
         z-index: 2;
         bottom: 10px;
-        left: 22px;
+        right: 22px;
       }
 
       mat-icon {
@@ -44,8 +46,10 @@
 
   .swiper {
     @include mixins.size();
+    @media (min-width: 768px) and (max-width: 1599px) {
+    }
 
-    @media (min-width: 320px) and (max-width: 1023px) {
+    @media (max-width: 767px) {
       display: grid;
       grid-template-columns: 1fr;
     }
@@ -53,19 +57,22 @@
     &__slide {
       position: relative;
       width: 100%;
-      min-height: 500px;
+      height: 500px;
       text-align: center;
       background: var(--color-bg-dark-gray);
       display: flex;
       gap: 10px;
-
-      @media (min-width: 320px) and (max-width: 1023px) {
-        min-height: 400px;
+      @media (min-width: 768px) and (max-width: 1599px) {
+        height: 400px;
+        //   overflow: visible;
+      }
+      @media (max-width: 767px) {
+        height: 450px;
         color: var(--color-text-white);
         background-repeat: no-repeat;
         background-size: cover;
         gap: 0;
-        padding: 10px;
+        padding: 10px 10px 20px 10px;
       }
 
       &-slide {
@@ -76,7 +83,7 @@
         gap: 10px;
         padding: 10px;
 
-        @media (min-width: 1024px) and (max-width: 1300px) {
+        @media (min-width: 768px) and (max-width: 1599px) {
           width: 60%;
           gap: 0;
         }
@@ -86,24 +93,35 @@
           display: flex;
           align-items: center;
           flex-direction: column;
+          @media (min-width: 768px) and (max-width: 1599px) {
+            //  width: 75%;
+          }
 
           &-title {
             color: var(--color-text-white);
             line-height: 100%;
             margin: 8px 8px 30px 8px;
+            @media (min-width: 768px) and (max-width: 1599px) {
+              margin-bottom: 15px;
+              margin-left: -10px;
+            }
           }
 
           &-txt {
             padding: 0 10px;
             margin-bottom: 40px;
 
-            @media (min-width: 1024px) and (max-width: 1300px) {
-              margin-bottom: 20px;
+            @media (min-width: 768px) and (max-width: 1599px) {
+              margin-bottom: 15px;
+              margin-left: -10px;
             }
           }
 
           .btns {
             width: 100%;
+            @media (min-width: 768px) and (max-width: 1599px) {
+              margin-left: -10px;
+            }
           }
         }
         &-foto {
@@ -113,43 +131,43 @@
           background-repeat: no-repeat;
           background-size: cover;
 
-          @media (min-width: 1024px) and (max-width: 1300px) {
+          @media (min-width: 768px) and (max-width: 1599px) {
             width: 40%;
           }
-          @media (min-width: 320px) and (max-width: 1023px) {
+          @media (max-width: 767px) {
             width: 100%;
           }
         }
       }
       &-content {
-        @media (min-width: 320px) and (max-width: 1023px) {
+        @media (max-width: 767px) {
           display: flex;
           flex-direction: column;
           align-items: center;
           border-radius: 5px;
           background-color: rgba(29, 29, 29, 0.7);
-          padding: 5px;
-          height: auto;
+          padding: 6px 10px;
+          height: 100%;
         }
 
         &-title {
-          @media (min-width: 320px) and (max-width: 1023px) {
+          @media (max-width: 767px) {
             color: var(--color-text-white);
             line-height: 1;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
           }
         }
 
         &-txt {
-          @media (min-width: 320px) and (max-width: 1023px) {
+          @media (max-width: 767px) {
             padding: 0 5px;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
           }
         }
         .btns {
-          @media (min-width: 320px) and (max-width: 1023px) {
-           // width: 100%;
-            justify-content: center;       
+          @media (max-width: 767px) {
+            width: 100%;
+            justify-content: center;
           }
         }
       }
@@ -187,11 +205,7 @@
     color: var(--color-text-white);
     right: -18%;
 
-    @media (min-width: 1024px) and (max-width: 1289px) {
-      right: -25%;
-    }
-
-    @media (min-width: 320px) and (max-width: 1023px) {
+    @media (max-width: 767px) {
       right: -70%;
     }
   }
@@ -204,17 +218,17 @@
   }
   .foto-1,
   .foto-2 {
-    @media (min-width: 1024px) and (max-width: 1300px) {
+    @media (min-width: 768px) and (max-width: 1599px) {
       width: 40%;
     }
-    @media (min-width: 320px) and (max-width: 1023px) {
+    @media (max-width: 767px) {
       width: 100%;
     }
   }
 
   .swiper-slide-0 {
     display: flex;
-    @media (min-width: 320px) and (max-width: 1023px) {
+    @media (max-width: 767px) {
       display: none;
     }
   }
@@ -227,15 +241,22 @@
   .swiper-slide-1,
   .swiper-slide-2 {
     display: none;
-    @media (min-width: 320px) and (max-width: 1023px) {
+    @media (max-width: 767px) {
       display: block;
+    }
+  }
+  swiper-container::part(pagination) {
+    @media (max-width: 767px) {
+       bottom: 5px;
+      
     }
   }
 
   swiper-container::part(bullet-active) {
     @include mixins.size($width: 0, $height: 0);
     background-color: transparent;
-    @media (min-width: 320px) and (max-width: 1023px) {
+
+    @media (max-width: 767px) {
       @include mixins.size($width: 10px, $height: 10px);
 
       background-color: orange;
@@ -245,7 +266,7 @@
     @include mixins.size($width: 0, $height: 0);
     background-color: transparent;
 
-    @media (min-width: 320px) and (max-width: 1023px) {
+    @media (max-width: 767px) {
       @include mixins.size($width: 8px, $height: 8px);
       background: rgb(255, 255, 255);
       opacity: 0.7;

@@ -10,10 +10,10 @@
     padding: 20px;
     position: relative;
 
-    @media (min-width: 320px) and (max-width: 1023px) {
+    @media (max-width: 767px) {
       padding: 10px;
     }
-    @media (min-width: 320px) and (max-width: 1023px) {
+    @media (max-width: 767px) {
       display: flex;
       flex-direction: column;
       flex-flow: wrap;
@@ -34,7 +34,7 @@
       box-shadow: 5px 5px 5px var(--color-shadow-black-05);
       background-color: var(--color-bg-dark-gray);
 
-      @media (min-width: 320px) and (max-width: 1023px) {
+      @media (max-width: 767px) {
         width: 95%;
       }
     }
@@ -64,7 +64,7 @@
     &__video {
       margin-bottom: 20px;
 
-      @media (min-width: 320px) and (max-width: 1023px) {
+      @media (max-width: 767px) {
         order: 2;
         margin-bottom: 0px;
       }
@@ -81,7 +81,7 @@
     }
 
     &__swiper {
-      @media (min-width: 320px) and (max-width: 1023px) {
+      @media (max-width: 767px) {
         order: 1;
         margin-bottom: 10px;
         position: relative;
@@ -93,7 +93,7 @@
         transform: scale(1, 1);
         transition: transform 0.7s ease-in-out;
 
-        @media (min-width: 320px) and (max-width: 1023px) {
+        @media (max-width: 767px) {
           margin: 5px 0px;
         }
 
@@ -101,7 +101,7 @@
           border-color: var(--color-border-dark-orange);
           transform: scale(1.1, 1.1);
 
-          @media (min-width: 320px) and (max-width: 1023px) {
+          @media (max-width: 767px) {
             transform: scale(1, 1);
           }
         }

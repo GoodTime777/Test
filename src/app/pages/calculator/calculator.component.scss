@@ -4,22 +4,25 @@
 
 .calculator {
   color: var(--color-text-black);
-  padding: 0 40px;
-  @media (min-width: 320px) and (max-width: 1023px) {
+  padding: 0 60px; //60
+
+  @media (min-width: 768px) and (max-width: 1599px) {
+    padding: 0 40px;
+  }
+  @media (max-width: 767px) {
     padding: 0 10px;
   }
 
   thead {
     tr {
       th {
-        font-family: Oswald, "Helvetica Neue", sans-serif;
+        // font-family: Oswald, "Helvetica Neue", sans-serif;
         text-transform: uppercase;
         border-bottom: none;
         background-color: var(--color-bg-yellow);
 
-        @media (min-width: 320px) and (max-width: 1023px) {
+        @media (max-width: 767px) {
           height: 60px;
-
           font-weight: 400;
           padding: 0 5px;
         }
@@ -30,7 +33,11 @@
     tr {
       td {
         font-size: 16px;
-        @media (min-width: 320px) and (max-width: 1023px) {
+        @media (min-width: 768px) and (max-width: 1599px) {
+          font-size: 14px;
+        }
+
+        @media (max-width: 767px) {
           font-size: 14px;
           height: 60px;
         }
@@ -38,7 +45,7 @@
       td:nth-child(1) {
         font-size: 18px;
         font-family: Oswald, "Helvetica Neue", sans-serif;
-        @media (min-width: 320px) and (max-width: 1023px) {
+        @media (max-width: 767px) {
           font-size: 16px;
           line-height: 1.2;
         }
@@ -62,30 +69,30 @@
     margin: 10px 0px 15px 0px;
 
     .table-one {
-      @media (min-width: 320px) and (max-width: 1023px) {
+      @media (max-width: 767px) {
         display: flex;
         flex-direction: row;
       }
       th,
       td {
-        @media (min-width: 320px) and (max-width: 1023px) {
+        @media (max-width: 767px) {
           @include mixins.flex();
         }
       }
       th.inline-flex {
-        @media (min-width: 320px) and (max-width: 1023px) {
+        @media (max-width: 767px) {
           display: inline;
           line-height: 50px;
         }
       }
       thead {
-        @media (min-width: 320px) and (max-width: 1023px) {
+        @media (max-width: 767px) {
           display: flex;
           flex-direction: row;
         }
 
         tr {
-          @media (min-width: 320px) and (max-width: 1023px) {
+          @media (max-width: 767px) {
             display: flex;
             flex-direction: column;
           }
@@ -94,33 +101,33 @@
         th:nth-child(2),
         th:nth-child(4),
         th:nth-child(6) {
-          @media (min-width: 320px) and (max-width: 1023px) {
+          @media (max-width: 767px) {
             background-color: transparent;
           }
         }
       }
       tbody {
-        @media (min-width: 320px) and (max-width: 1023px) {
+        @media (max-width: 767px) {
           display: flex;
           flex-direction: row;
         }
 
         tr {
-          @media (min-width: 320px) and (max-width: 1023px) {
+          @media (max-width: 767px) {
             display: flex;
             flex-direction: column;
             border-left: 1px solid #000;
           }
 
           td:nth-child(1) {
-            @media (min-width: 320px) and (max-width: 1023px) {
+            @media (max-width: 767px) {
               padding: 0 15px;
             }
           }
         }
         tr:nth-child(2) {
           background-color: var(--color-bg-yellow);
-          @media (min-width: 320px) and (max-width: 1023px) {
+          @media (max-width: 767px) {
             background-color: transparent;
           }
         }
@@ -128,7 +135,7 @@
         td:nth-child(1),
         td:nth-child(3),
         td:nth-child(5) {
-          @media (min-width: 320px) and (max-width: 1023px) {
+          @media (max-width: 767px) {
             background-color: var(--color-bg-yellow);
           }
         }
@@ -145,7 +152,7 @@
     gap: 50px;
     justify-content: center;
     margin-bottom: 20px;
-    @media (min-width: 320px) and (max-width: 1023px) {
+    @media (max-width: 767px) {
       flex-direction: column;
       align-items: center;
       gap: 10px;
@@ -158,9 +165,13 @@
       outline-offset: -4px;
       background-color: rgb(255, 187, 61); // $texas-rose;
       border-radius: 20px;
-      padding: 10px 15px;
+      padding: 10px 15px 15px 15px;
+      
+      @media (min-width: 768px) and (max-width: 1599px) {
+        width: 100%;
+      }
 
-      @media (min-width: 320px) and (max-width: 1023px) {
+      @media (max-width: 767px) {
         width: 100%;
         padding: 10px 15px;
       }
@@ -173,7 +184,7 @@
         &-item {
           @include mixins.flex();
           flex-direction: column;
-          margin: 0 auto;
+          margin: 10px auto;
           width: 100%;
 
           &-label {
@@ -212,13 +223,13 @@
           }
 
           &-result {
-            font-weight: 600;
+            font-weight: 400;
             font-size: 22px;
           }
         }
         .result-floor {
           margin-top: 10px;
-          @media (min-width: 320px) and (max-width: 1023px) {
+          @media (max-width: 767px) {
             margin-top: 10px;
           }
         }
@@ -229,7 +240,7 @@
         width: 100%;
         padding-top: 25px;
 
-        @media (min-width: 320px) and (max-width: 1023px) {
+        @media (max-width: 767px) {
           padding-top: 0px;
         }
       }
@@ -243,16 +254,15 @@
     text-align: center;
     margin-bottom: 20px;
     &-number {
-      font-family: Oswald, "Helvetica Neue", sans-serif;
+      // font-family: Oswald, "Helvetica Neue", sans-serif;
       font-size: 26px;
       border-bottom: 2px solid var(--color-border-orange);
     }
 
     &-btn {
-      @media (min-width: 320px) and (max-width: 1023px) {
+      @media (max-width: 767px) {
         width: 100%;
       }
-     
     }
   }
   button[disabled] {

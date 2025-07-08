@@ -13,12 +13,14 @@ import { MatDialogModule } from '@angular/material/dialog';
 //import { DialogComponent } from '../dialog/dialog.component';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { DialogComponent } from '../dialog/dialog.component';
+import { BackgroundComponent } from "../background/background.component";
+import { TruckComponent } from "../truck/truck.component";
 
 
 
 @Component({
   selector: 'app-contacts',
-  imports: [MatIconModule, MatDialogModule,  RouterLink, RouterLinkActive],
+  imports: [MatIconModule, MatDialogModule, RouterLink, RouterLinkActive, BackgroundComponent, TruckComponent],
   templateUrl: './contacts.component.html',
   styleUrl: './contacts.component.scss'
 })
