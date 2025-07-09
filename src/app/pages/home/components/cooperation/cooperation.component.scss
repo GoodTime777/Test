@@ -10,6 +10,7 @@
 
   .cooperation {
     padding: 0 60px;
+
     @media (min-width: 768px) and (max-width: 1599px) {
       padding: 0 40px;
     }
@@ -46,24 +47,23 @@
           &-item {
             position: relative;
             margin-left: -0.1%;
+
             @media (min-width: 768px) and (max-width: 1599px) {
               margin-left: -4px;
-              @media (min-width: 768px) and (max-width: 1599px) {
-                white-space: normal;
-              }
             }
 
             @media (max-width: 767px) {
               margin-left: 0;
             }
 
-            .spans {
-              top: 50%;
-              transform: translateY(-50%);
+            &-spans {
               width: 100%;
               position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
               z-index: 10;
               margin-left: 11%;
+
               @media (min-width: 768px) and (max-width: 1599px) {
                 white-space: normal;
               }
@@ -71,40 +71,45 @@
               @media (max-width: 767px) {
                 @include mixins.flex($align-i: flex-end);
                 gap: 10px;
+                top: 70px;
                 margin-left: 0;
                 padding: 0 20px;
-                top: 70px;
               }
-            }
-            span {
-              display: block;
-              text-align: center;
+
+              span {
+                display: block;
+                text-align: center;
+              }
             }
 
             .red {
               font-size: 54px;
               font-weight: 200;
               line-height: 1.15;
+
               @media (min-width: 768px) and (max-width: 1599px) {
                 font-size: 32px;
               }
+
               @media (max-width: 767px) {
                 font-size: 50px;
               }
             }
 
-            .txts {
+            .text {
               font-weight: 300;
               font-size: 22px;
               color: var(--color-text-white);
+
               @media (min-width: 768px) and (max-width: 1599px) {
                 font-size: 12px;
               }
+
               @media (max-width: 767px) {
                 font-family: Oswald, "Helvetica Neue", sans-serif;
-                text-transform: uppercase;
                 font-size: 26px;
                 font-weight: 100;
+                text-transform: uppercase;
               }
             }
           }
