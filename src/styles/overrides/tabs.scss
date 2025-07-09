@@ -1,5 +1,5 @@
 @use "variables";
-@use '@angular/material' as mat;
+@use "@angular/material" as mat;
 
 :root {
   @include mat.tabs-overrides(
@@ -15,10 +15,9 @@
       divider-color: var(--color-white-05),
       label-text-size: 26px,
       label-text-font: Oswald,
-      //label-text-weight: 500,
     )
-  ); 
-  @media (min-width: 1024px) and (max-width: 1300px) {
+  );
+  @media (min-width: 768px) and (max-width: 1599px) {
     @include mat.tabs-overrides(
       (
         label-text-size: 22px,
@@ -28,7 +27,7 @@
   }
 
   @media (max-width: 767px) {
-       @include mat.tabs-overrides(
+    @include mat.tabs-overrides(
       (
         label-text-size: 18px,
         container-height: 80px,

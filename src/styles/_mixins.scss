@@ -12,15 +12,27 @@
   height: $height;
 }
 
+@mixin glass(
+  $border-r: 10px,
+  $border: 1px solid var(--color-border-white-02),
+  $box-s: 3px 4px 6px var(--color-shadow-black-02),
+  $background: var(--color-bg-glass),
+  $backdrop-f: blur(5.1px),
+  $w-b-filter: blur(5.1px)
+) {
+  border-radius: $border-r;
+  border: $border;
+  box-shadow: $box-s;
+  background: $background; //glass
+  backdrop-filter: $backdrop-f;
+  -webkit-backdrop-filter: $w-b-filter;
+}
 // @mixin border($border-l:transparent, $border-t:transparent,$border-b:transparent,$border-r:transparent){
 //    border-left: 1px solid rgba(0, 0, 0, 0.75);
 //       border-top: 1px solid rgba(0, 0, 0, 0.5);
 //       border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 //       border-right: 1px solid var(--color-border-white-02);
 // }
-
-
-
 
 // @include mixins.btn()
 // @mixin linkInBtn(){
@@ -60,18 +72,18 @@
 //  * }
 //  */
 @mixin mobile($max-mobile-width: 767px) {
-   @media (max-width: $max-mobile-width) {
-  //   @content;
-   }
+  @media (max-width: $max-mobile-width) {
+    //   @content;
+  }
 }
 @mixin tablet($min-tablet-width: 768px) {
   @media (min-width: $min-tablet-width) {
- //   @content;
+    //   @content;
   }
 }
 @mixin desktop($min-desktop-width: 1600px) {
   @media (min-width: $min-desktop-width) {
- //   @content;
+    //   @content;
   }
 }
 // /**
@@ -85,7 +97,6 @@
 //  *   }
 //  * }
 //  */
-
 
 // /**
 //  * Миксин для устройств с сенсорным экраном.
