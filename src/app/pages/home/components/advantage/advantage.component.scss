@@ -2,10 +2,11 @@
 @use "./mixins" as mixins;
 
 .wrapper {
-  background: rgba(236, 240, 241, 0.3); //@body !light+
-  box-shadow: 0 5px 10px var(--color-shadow-black-05);
-  backdrop-filter: blur(8.8px);
-  -webkit-backdrop-filter: blur(8.8px);
+  @include mixins.glass(
+    $border-r: 0px,
+    $background: rgba(236, 240, 241, 0.3),
+    $box-s: 0 5px 10px var(--color-shadow-black-05)
+  );
   margin-bottom: 20px;
 
   .advantage {
@@ -28,31 +29,20 @@
       }
 
       &-content {
-        // @media (max-width: 767px) {
-        //   padding-bottom: 0px;
-        // }
-
         &-list {
           position: relative;
-          border-radius: 10px;
-          z-index: 1;
+
           @media (max-width: 767px) {
             display: flex;
             flex-direction: column;
-            padding-bottom: 30px;
+            gap: 10px;
+            padding-bottom: 45px;
           }
 
           &-item {
-            width: 43%;
-            height: auto;
+            @include mixins.size($width: 43%, $height: auto);
             position: absolute;
-            left: 0;
-            z-index: 3;
-            gap: 0px;
-            background-color: var(--color-bg-yellow);
-            border-radius: 10px;
-            outline: 1px solid var(--color-border-black);
-            outline-offset: -4.5px;
+            @include mixins.card-outline();
             box-shadow: 3px 1px 4px 0px var(--color-shadow-black);
             padding: 20px 15px;
 
@@ -60,29 +50,30 @@
               height: 200px;
               padding: 10px 7px;
             }
+
             @media (max-width: 767px) {
               width: 100%;
-              padding: 10px 7px;
               position: relative;
-              box-shadow: 1px 5px 8px 1px rgba(34, 34, 34, 0.712);
+              padding: 10px 7px;
+              box-shadow: 0px 2px 4px 0px var(--color-shadow-black);
             }
 
             &-top {
               @include mixins.flex($justify-c: end);
-
               gap: 5px;
               padding-right: 18px;
 
               &-icon {
                 mat-icon {
-                  width: auto;
-                  height: auto;
+                  @include mixins.size($width: auto, $height: auto);
                   font-size: 30px;
                   color: var(--color-text-black);
                   margin-bottom: -7px;
                   transition: transform 0.5s ease, color 1s ease;
+
                   @media (max-width: 767px) {
                     font-size: 28px;
+                    margin-top: -4px;
                   }
                 }
               }
@@ -91,76 +82,60 @@
             &-txt {
               width: 100%;
               text-align: justify;
-              transition: color 0.65s ease;
+              color: var(--color-text-black);
               padding: 10px;
             }
-          }
 
-          &-item:hover {
-            mat-icon {
-              transform: translateX(5px);
+            &:nth-child(1) {
+              left: 0;
+              z-index: 3;
+            }
+
+            &:nth-child(2) {
+              left: 10%;
+              z-index: 2;
+            }
+
+            &:nth-child(3) {
+              left: 20%;
+              z-index: 1;
+            }
+
+            &:nth-child(1),
+            &:nth-child(2),
+            &:nth-child(3) {
+              transition: transform 1.2s ease;
+
+              @media (max-width: 767px) {
+                left: 0;
+              }
+            }
+
+            &:hover {
+              mat-icon {
+                transform: translateX(5px);
+
+                @media (max-width: 767px) {
+                  transform: translateX(0px);
+                }
+              }
+            }
+
+            &:nth-child(2):hover,
+            &:nth-child(3):hover {
+              transform: translateX(74%);
+
+              @media (max-width: 767px) {
+                transform: translateX(0%);
+              }
+            }
+
+            &:nth-child(2):hover + li:nth-child(3) {
+              transform: translateX(59%);
+
               @media (max-width: 767px) {
                 transform: translateX(0px);
               }
-            }
-          }
-
-          li:nth-child(1) {
-            color: var(--color-text-black);
-            @media (max-width: 767px) {
-              left: 0;
-            }
-          }
-
-          li:nth-child(2) {
-            left: 10%;
-            z-index: 2;
-            transition: transform 1.2s ease;
-            @media (max-width: 767px) {
-              left: 0;
-              top: -10px;
-            }
-          }
-
-          li:nth-child(3) {
-            left: 20%;
-            z-index: 1;
-            transition: transform 1.2s ease;
-
-            @media (max-width: 767px) {
-              left: 0;
-              top: -20px;
-              box-shadow: 1px 3px 4px 1px rgba(34, 34, 34, 0.712);
-            }
-          }
-
-          li:nth-child(2),
-          li:nth-child(3) {
-            color: var(--color-text-white);
-
-            @media (max-width: 767px) {
-              color: var(--color-text-black);
-            }
-          }
-
-          li:hover {
-            color: var(--color-text-black);
-          }
-
-          li:nth-child(2):hover,
-          li:nth-child(3):hover {
-            transform: translateX(74%);
-
-            @media (max-width: 767px) {
-              transform: translateX(0%);
-            }
-          }
-
-          li:nth-child(2):hover + li:nth-child(3) {
-            transform: translateX(59%);
-
-            @media (max-width: 767px) {
-              transform: translateX(0px);
             }
           }
         }

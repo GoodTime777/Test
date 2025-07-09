@@ -27,6 +27,18 @@
   backdrop-filter: $backdrop-f;
   -webkit-backdrop-filter: $w-b-filter;
 }
+
+@mixin card-outline(
+  $background-c: var(--color-bg-yellow),
+  $border-r: 10px,
+  $outline: 1px solid var(--color-border-black),
+  $outline-o: -4.5px
+) {
+  background-color: $background-c;
+  border-radius: $border-r;
+  outline: $outline;
+  outline-offset: $outline-o;
+}
 // @mixin border($border-l:transparent, $border-t:transparent,$border-b:transparent,$border-r:transparent){
 //    border-left: 1px solid rgba(0, 0, 0, 0.75);
 //       border-top: 1px solid rgba(0, 0, 0, 0.5);
