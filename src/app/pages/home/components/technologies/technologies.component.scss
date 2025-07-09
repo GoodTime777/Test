@@ -4,18 +4,14 @@
 .wrapper {
   margin-bottom: 80px;
 
-  @media (min-width: 768px) and (max-width: 1599px) {
-    margin-bottom: 40px;
-  }
-
-  @media (max-width: 767px) {
+  @media (max-width: 1599px) {
     margin-bottom: 40px;
   }
 
   .technologies {
     padding: 0 60px;
 
-    @media (min-width: 768px) and (max-width: 1599px){
+    @media (min-width: 768px) and (max-width: 1599px) {
       padding: 0 40px;
     }
 
@@ -37,13 +33,13 @@
           width: 34%;
           position: relative;
           @include mixins.flex($justify-c: end);
-          clip-path: polygon(25% 0, 100% 0%, 100% 100%, 0 100%);
           float: right;
+          clip-path: polygon(25% 0, 100% 0%, 100% 100%, 0 100%);
           shape-outside: polygon(20% 0, 100% 0%, 100% 100%, 0 100%);
 
-           @media (min-width: 768px) and (max-width: 1599px){
+          @media (min-width: 768px) and (max-width: 1599px) {
             width: 48%;
-           }
+          }
 
           @media (max-width: 767px) {
             display: none;
@@ -51,8 +47,7 @@
 
           &-img {
             img {
-              width: 100%;
-              height: 100%;
+              @include mixins.size();
               object-fit: cover;
             }
           }
@@ -77,9 +72,14 @@
             }
           }
         }
+
         &-item {
           &-txt:not(:last-child) {
             margin-bottom: 20px;
+
+            @media (max-width: 1599px) {
+              margin-bottom: 13px;
+            }
           }
         }
       }
