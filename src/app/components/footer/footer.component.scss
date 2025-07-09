@@ -7,8 +7,7 @@
 
   .footer {
     padding: 8px 25px;
-    display: flex;
-    justify-content: space-between;
+    @include mixins.flex($justify-c: space-between, $align-i: normal);
 
     @media (min-width: 768px) and (max-width: 1599px) {
       padding: 15px 25px;
@@ -30,20 +29,23 @@
       }
     }
 
-    &__right {
+    &__left {
       width: 50%;
+
       @media (min-width: 768px) and (max-width: 1599px) {
         width: 75%;
       }
+
       @media (max-width: 767px) {
-        width: 100%;
         grid-area: A;
+        width: 100%;
         position: relative;
         border-bottom: 1px solid var(--color-texas-rose);
       }
+
       &-info {
         display: flex;
-
+        width: 100%;
         @media (min-width: 768px) and (max-width: 1599px) {
           position: relative;
           display: grid;
@@ -52,20 +54,17 @@
 
         @media (max-width: 767px) {
           flex-direction: column;
-          width: 100%;
           gap: 10px;
         }
 
         &-schedule {
           @include mixins.flex();
           flex-direction: column;
-          margin-right: 15px;
+          margin-right: 10px;
 
           @media (min-width: 768px) and (max-width: 1599px) {
             margin-bottom: auto;
-            margin-right: 10px;
             grid-area: A;
-            // background-color: pink;
           }
 
           @media (max-width: 767px) {
@@ -76,13 +75,16 @@
             color: var(--color-texas-rose);
             font-weight: 300;
             border-bottom: 1px solid var(--color-texas-rose);
-            @media (min-width: 768px) and (max-width: 1599px) {
-              margin-bottom: 8px;
+            margin-bottom: 8px;
+
+            @media (max-width: 767px) {
+              margin-bottom: 4px;
             }
           }
 
           &-description {
             color: var(--color-text-white);
+
             &-detail-one {
               @media (max-width: 767px) {
                 color: var(--color-texas-rose);
@@ -90,40 +92,35 @@
             }
           }
         }
+
         &-box {
-          margin: 0 15px;
+          display: flex;
+          gap: 10px;
+          margin-right: 10px;
 
           @media (min-width: 768px) and (max-width: 1599px) {
-            margin: 0 10px;
             grid-area: B;
-            // background-color: green;
           }
 
           &-address {
-            display: flex;
-
             &-container {
               display: flex;
               flex-direction: column;
-              text-align: center;
               gap: 10px;
               margin-bottom: 5px;
+
               @media (min-width: 768px) and (max-width: 1599px) {
                 margin-bottom: 0;
               }
 
               &-txt {
-                text-align: left;
-
                 a {
                   position: relative;
-                  word-wrap: break-word;
                   @include mixins.flex();
                   gap: 5px;
 
                   img {
-                    width: 22px;
-                    height: 22px;
+                    @include mixins.size($width: 22px, $height: 22px);
                   }
                 }
               }
@@ -134,12 +131,7 @@
                 }
 
                 a {
-                  display: flex;
-                  gap: 5px;
                   transition: color 0.5s ease;
-                  @media (min-width: 768px) and (max-width: 1599px) {
-                    display: inline;
-                  }
 
                   @media (max-width: 767px) {
                     color: var(--color-texas-rose);
@@ -151,6 +143,7 @@
                     margin-bottom: -10px;
                   }
                 }
+
                 a:hover {
                   color: var(--color-texas-rose);
                 }
@@ -160,55 +153,53 @@
         }
 
         &-messengers {
-          display: flex;
+          @include mixins.flex($justify-c: space-around);
           flex-direction: column;
-          justify-content: space-around;
           margin-left: auto;
           margin-right: 10px;
 
           @media (min-width: 768px) and (max-width: 1599px) {
-            margin-right: 5px;
             grid-area: C;
             flex-direction: row;
             position: absolute;
-            right: 0;
             bottom: 6px;
+            right: 0;
+            margin-right: 5px;
           }
 
           @media (max-width: 767px) {
+            flex-direction: row;
             position: absolute;
             bottom: 12px;
             right: 0;
-            flex-direction: row;
           }
 
           a {
-            display: flex;
-            justify-content: center;
+            @include mixins.flex();
             width: 40px;
             text-align: center;
             transform: scale(1, 1);
             transition: transform 0.3s ease-in-out;
           }
 
-          a:hover {
+          a:hover,
+          a:active {
             transform: scale(1.1, 1.1);
           }
 
           img {
-            width: 30px;
-            height: 30px;
+            @include mixins.size($width: 30px, $height: 30px);
           }
         }
       }
     }
     &__logo {
       width: 4%;
-      margin: auto 0;
+      margin: auto 0 0px 10px;
 
       @media (min-width: 768px) and (max-width: 1599px) {
         width: 7%;
-        margin: auto 0 -2px 0;
+        margin: auto 0 -2px 5px;
       }
 
       @media (max-width: 767px) {
@@ -227,18 +218,18 @@
       }
     }
 
-    &__left {
+    &__right {
       width: 50%;
-      display: flex;
+      @include mixins.flex($justify-c: space-between, $align-i: normal);
       flex-direction: column;
-      justify-content: space-between;
 
       @media (min-width: 768px) and (max-width: 1599px) {
         width: 40%;
       }
+
       @media (max-width: 767px) {
-        width: 100%;
         grid-area: B;
+        width: 100%;
         flex-direction: row;
       }
 
@@ -249,6 +240,7 @@
           text-align: right;
           display: flex;
           gap: 15px;
+
           @media (max-width: 767px) {
             gap: 6px;
             flex-direction: column;
@@ -260,49 +252,52 @@
             &-link {
               @media (max-width: 767px) {
                 border-bottom: 1px dashed var(--color-texas-rose);
-                font-size: 13px !important;
               }
             }
+
             .mat-icon {
               transition: color 0.3s ease-in-out;
               color: var(--color-text-white);
+
               @media (max-width: 767px) {
                 color: var(--color-texas-rose);
               }
             }
+
             .mat-icon:hover {
               color: var(--color-texas-rose);
             }
           }
         }
       }
+
       &-docs {
-        margin-left: auto;
         text-align: right;
+        margin-left: auto;
+
         @media (max-width: 767px) {
-          display: flex;
-          justify-content: flex-end;
+          @include mixins.flex($justify-c: flex-end, $align-i: normal);
           flex-direction: column;
           padding-bottom: 7px;
         }
+
         &-copyright {
           &-txt {
             color: var(--color-text-white);
-            @media (max-width: 767px) {
-              font-size: 13px !important;
-            }
           }
         }
+
         &-privacy {
           &-link {
             transition: color 0.3s ease-in-out;
+
             @media (max-width: 767px) {
               border-bottom: 1px dashed var(--color-texas-rose);
-              font-size: 13px !important;
             }
           }
           &-link:hover {
             color: var(--color-texas-rose);
+
             @media (max-width: 767px) {
               color: var(--color-text-white);
             }
