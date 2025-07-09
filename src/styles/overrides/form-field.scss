@@ -1,5 +1,5 @@
 @use "variables";
-@use '@angular/material' as mat;
+@use "@angular/material" as mat;
 
 :root {
   @include mat.form-field-overrides(
@@ -8,13 +8,11 @@
       filled-focus-active-indicator-color: var(--color-white),
       filled-focus-label-text-color: var(--color-white),
       filled-container-color: var(--color-cinder),
-      // filled-disabled-container-color: green,
       filled-label-text-color: var(--color-white-07),
       filled-hover-label-text-color: var(--color-white),
       filled-disabled-label-text-color: var(--color-squash),
       filled-input-text-color: var(--color-white),
       filled-disabled-input-text-color: var(--color-squash),
-      //filled-input-text-placeholder-color: rgb(0, 255, 13),
       filled-error-hover-label-text-color: var(--color-rosso-corsa),
       filled-error-focus-label-text-color: var(--color-rosso-corsa),
       filled-error-label-text-color: var(--color-rosso-corsa),
