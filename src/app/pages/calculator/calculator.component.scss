@@ -9,6 +9,7 @@
   @media (min-width: 768px) and (max-width: 1599px) {
     padding: 0 40px;
   }
+
   @media (max-width: 767px) {
     padding: 0 10px;
   }
@@ -16,8 +17,6 @@
   thead {
     tr {
       th {
-        // font-family: Oswald, "Helvetica Neue", sans-serif;
-        text-transform: uppercase;
         border-bottom: none;
         background-color: var(--color-bg-yellow);
 
@@ -29,10 +28,12 @@
       }
     }
   }
+
   tbody {
     tr {
       td {
         font-size: 16px;
+
         @media (min-width: 768px) and (max-width: 1599px) {
           font-size: 14px;
         }
@@ -42,9 +43,11 @@
           height: 60px;
         }
       }
+
       td:nth-child(1) {
-        font-size: 18px;
         font-family: Oswald, "Helvetica Neue", sans-serif;
+        font-size: 18px;
+
         @media (max-width: 767px) {
           font-size: 16px;
           line-height: 1.2;
@@ -52,60 +55,31 @@
       }
     }
   }
+
   &__title {
     margin-bottom: 0;
   }
-  .table-one,
-  .table-two {
-    width: 100%;
-    border-spacing: 0px;
-    text-align: center;
-    border: 1px solid black;
-  }
+
   &__price {
     @include mixins.flex();
     flex-direction: column;
     gap: 20px;
-    margin: 10px 0px 15px 0px;
+    margin: 10px 0px 25px 0px;
+
+    &-table {
+      width: 100%;
+      text-align: center;
+      border-spacing: 0px;
+      border: 1px solid black;
+    }
 
     .table-one {
       @media (max-width: 767px) {
         display: flex;
         flex-direction: row;
       }
-      th,
-      td {
-        @media (max-width: 767px) {
-          @include mixins.flex();
-        }
-      }
-      th.inline-flex {
-        @media (max-width: 767px) {
-          display: inline;
-          line-height: 50px;
-        }
-      }
-      thead {
-        @media (max-width: 767px) {
-          display: flex;
-          flex-direction: row;
-        }
 
-        tr {
-          @media (max-width: 767px) {
-            display: flex;
-            flex-direction: column;
-          }
-        }
-
-        th:nth-child(2),
-        th:nth-child(4),
-        th:nth-child(6) {
-          @media (max-width: 767px) {
-            background-color: transparent;
-          }
-        }
-      }
+      thead,
       tbody {
         @media (max-width: 767px) {
           display: flex;
@@ -116,6 +90,23 @@
           @media (max-width: 767px) {
             display: flex;
             flex-direction: column;
+          }
+        }
+      }
+
+      thead {
+        th:nth-child(2),
+        th:nth-child(4),
+        th:nth-child(6) {
+          @media (max-width: 767px) {
+            background-color: transparent;
+          }
+        }
+      }
+
+      tbody {
+        tr {
+          @media (max-width: 767px) {
             border-left: 1px solid #000;
           }
 
@@ -127,6 +118,7 @@
         }
         tr:nth-child(2) {
           background-color: var(--color-bg-yellow);
+
           @media (max-width: 767px) {
             background-color: transparent;
           }
@@ -140,6 +132,20 @@
           }
         }
       }
+
+      th,
+      td {
+        @media (max-width: 767px) {
+          @include mixins.flex();
+        }
+      }
+
+      th.inline-flex {
+        @media (max-width: 767px) {
+          display: inline;
+          line-height: 50px;
+        }
+      }
     }
   }
 
@@ -147,11 +153,12 @@
     text-align: center;
     margin-bottom: 10px;
   }
+
   &__container {
-    display: flex;
+    @include mixins.flex($align-i: normal);
     gap: 50px;
-    justify-content: center;
     margin-bottom: 20px;
+
     @media (max-width: 767px) {
       flex-direction: column;
       align-items: center;
@@ -161,100 +168,92 @@
 
     &-calc {
       width: 40%;
-      outline: 1px solid black;
-      outline-offset: -4px;
-      background-color: rgb(255, 187, 61); // $texas-rose;
-      border-radius: 20px;
-      padding: 10px 15px 15px 15px;
-      
-      @media (min-width: 768px) and (max-width: 1599px) {
-        width: 100%;
-      }
+      @include mixins.card-outline($border-r: 20px);
+      padding: 13px;
 
-      @media (max-width: 767px) {
+      @media (max-width: 1599px) {
         width: 100%;
-        padding: 10px 15px;
       }
 
       &-name {
         text-align: center;
         margin-bottom: 0px;
       }
+
       &-wrap {
         &-item {
+          width: 100%;
           @include mixins.flex();
           flex-direction: column;
           margin: 10px auto;
-          width: 100%;
 
           &-label {
             margin-bottom: 5px;
           }
+
           &-input {
             width: 100%;
+            color: white;
+            margin-bottom: 10px;
 
             input {
-              color: white;
               width: 100%;
               padding: 10px;
               border-radius: 6px;
               background-color: rgb(20, 20, 20);
             }
           }
+
           &-btn {
             width: 100%;
             color: black;
-            border: 1px solid rgb(255, 255, 255);
             background-color: rgb(255, 255, 255);
-            padding: 10px 10px;
             border-radius: 10px;
-            margin-bottom: 5px;
+            border: 1px solid rgb(255, 255, 255);
             transition: color 0.5s ease, border 0.5s ease,
               background-color 0.5s ease;
-          }
+            padding: 10px;
+            margin-bottom: 10px;
 
-          &-btn:hover {
-            color: black;
-            border: 1px solid black;
-          }
-          &-btn:active {
-            color: rgb(255, 255, 255);
-            background-color: black;
+            &:hover {
+              border: 1px solid black;
+
+              @media (max-width: 767px) {
+                border-color: rgb(255, 255, 255);
+              }
+            }
+
+            &:active {
+              color: rgb(255, 255, 255);
+              background-color: black;
+            }
           }
 
           &-result {
-            font-weight: 400;
             font-size: 22px;
-          }
-        }
-        .result-floor {
-          margin-top: 10px;
-          @media (max-width: 767px) {
-            margin-top: 10px;
+            font-weight: 400;
           }
         }
       }
     }
-    .calc-wall {
-      .calculator__container-calc-wrap {
-        width: 100%;
-        padding-top: 25px;
 
-        @media (max-width: 767px) {
-          padding-top: 0px;
-        }
+    .calc-wall-wrap {
+      width: 100%;
+      padding-top: 38px;
+
+      @media (max-width: 767px) {
+        padding-top: 0px;
       }
     }
   }
+
   &__result {
     @include mixins.flex();
     flex-direction: column;
     gap: 20px;
-    color: black;
-    text-align: center;
     margin-bottom: 20px;
+
     &-number {
-      // font-family: Oswald, "Helvetica Neue", sans-serif;
       font-size: 26px;
       border-bottom: 2px solid var(--color-border-orange);
     }
@@ -265,10 +264,11 @@
       }
     }
   }
+
   button[disabled] {
+    cursor: not-allowed;
+    color: black;
     background-color: transparent;
     border-color: black;
-    color: black;
-    cursor: not-allowed;
   }
 }

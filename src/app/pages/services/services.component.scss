@@ -56,7 +56,8 @@
           }
         }
       }
-      &-foto {
+
+      &-photo {
         @include mixins.size($height: 100%, $width: 50%);
         float: right;
 
@@ -79,6 +80,7 @@
     padding: 0 10px;
   }
 }
+
 :host ::ng-deep .mdc-tab {
   @media (max-width: 767px) {
     width: 90px;
@@ -100,6 +102,7 @@
   @media (min-width: 768px) and (max-width: 1599px) {
     height: 480px;
   }
+
   @media (max-width: 767px) {
     height: 810px;
   }
@@ -107,5 +110,9 @@
 
 :host ::ng-deep .mat-mdc-tab-body-content {
   background-color: var(--color-bg-dark-gray);
-  padding: 7px;
+  padding: 10px;
+
+  @media (max-width: 767px) {
+    padding: 7px;
+  }
 }
