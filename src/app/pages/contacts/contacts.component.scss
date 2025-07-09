@@ -3,19 +3,18 @@
 @use "decoration";
 
 .contacts {
-  display: flex;
-  justify-content: space-between;
+  @include mixins.flex($justify-c: space-between);
   padding: 30px 40px 0px 40px;
 
   @media (min-width: 768px) and (max-width: 1599px) {
-    padding: 20px 20px 0px 20px;
     flex-direction: column;
+    padding: 20px 20px 0px 20px;
   }
 
   @media (max-width: 767px) {
+    justify-content: center;
     flex-flow: wrap;
     padding: 10px 10px 0px 10px;
-    justify-content: center;
   }
 
   h2 {
@@ -30,7 +29,7 @@
     padding: 20px;
 
     @media (max-width: 767px) {
-      padding: 10px 10px;
+      padding: 10px;
     }
   }
 
@@ -41,6 +40,7 @@
     @media (min-width: 768px) and (max-width: 1599px) {
       width: 100%;
     }
+
     @media (max-width: 767px) {
       order: 2;
       width: 100%;
@@ -48,43 +48,50 @@
 
     &-content {
       color: var(--color-text-black);
-      background: var(--color-bg-glass);
-      border-radius: 16px;
-      box-shadow: 0 4px 10px var(--color-shadow-black-05);
-      backdrop-filter: blur(8.8px);
-      -webkit-backdrop-filter: blur(8.8px);
-      border: 1px solid var(--color-border-white-03);
+      @include mixins.glass(
+        $border-r: 16px,
+        $box-s: 0 4px 10px var(--color-shadow-black-05),
+        $backdrop-f: blur(8.8px),
+        $w-b-filter: blur(8.8px)
+      );
       transition: background 0.7s ease, transform 0.7s ease,
         box-shadow 0.7s ease;
 
       @media (max-width: 767px) {
+        background: var(--color-bg-glass);
+        box-shadow: 0 4px 10px var(--color-shadow-black-05);
       }
 
       &:hover {
         color: var(--color-text-black);
-        background: var(--color-bg-glass-hover-orange);
-        box-shadow: 0 4px 30px var(--color-shadow-black-02);
+        @include mixins.glass(
+          $background: var(--color-bg-glass-hover-orange),
+          $border-r: 16px,
+          $box-s: 0 4px 30px var(--color-shadow-black-02),
+          $backdrop-f: blur(8.8px),
+          $w-b-filter: blur(8.8px)
+        );
         transform: translate(8px, -5px);
 
         @media (min-width: 768px) and (max-width: 1599px) {
-          //  transform: translate(0px, 0px), scale(1.01, 1.01);
           transform: scale(1.005, 1.005);
         }
 
         @media (max-width: 767px) {
           transform: translate(0px, 0px);
-          color: var(--color-text-gray);
           background: var(--color-bg-glass);
           box-shadow: 0 4px 10px var(--color-shadow-black-05);
         }
       }
     }
   }
+
   &__contacts {
-    @include mixins.flex();
     width: 50%;
     text-align: center;
+    @include mixins.flex();
     flex-direction: column;
+
     @media (min-width: 768px) and (max-width: 1599px) {
       width: 100%;
     }
@@ -93,6 +100,7 @@
       order: 1;
       width: 100%;
     }
+
     &-contact {
       color: var(--color-text-black);
       margin: 0 auto;
@@ -107,6 +115,7 @@
             ); //20-14 320-1920
             color: var(--color-text-black);
           }
+
           span mat-icon {
             font-size: 20px;
             margin-bottom: -7px;
@@ -127,10 +136,12 @@
       cursor: pointer;
       width: 100%;
       margin-bottom: 20px;
+
+      @media (max-width: 767px) {
+        margin-bottom: 10px;
+      }
+
       iframe {
-        @media (min-width: 768px) and (max-width: 1599px) {
-          width: 85%;
-        }
         @media (max-width: 767px) {
           width: 100%;
         }
@@ -139,32 +150,26 @@
 
     &-buttons {
       @media (min-width: 768px) and (max-width: 1599px) {
-        margin-bottom: 10px;
         flex-direction: row;
         gap: 10px;
+        margin-bottom: 10px;
       }
+
       @media (max-width: 767px) {
-        width: 100%;
         gap: 0;
+        margin-bottom: 15px;
       }
 
       &-btn {
-        @media (max-width: 767px) {
-          width: 100%;
-        }
-        button {
+        button,
+        button:hover {
           @media (max-width: 767px) {
             background-color: black;
             color: white;
             border: none;
           }
         }
-        button:hover {
-          @media (max-width: 767px) {
-            background-color: rgb(0, 0, 0);
-            color: white;
-          }
-        }
+
         button:active {
           @media (max-width: 767px) {
             background-color: white;
