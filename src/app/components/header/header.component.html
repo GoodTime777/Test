@@ -11,14 +11,14 @@
       </div>
       <button class="header__container-burger">
         <input
-          class="menu-trigger hidden"
+          class="header__container-burger-trigger  hidden"
           id="togglenav"
           type="checkbox"
           [checked]="isCheckboxChecked"
         />
-        <label class="burger-wrapper" for="togglenav">
-          <div class="hamburger"></div>
-          <div class="layer-click" (click)="menuBurger()"></div>
+        <label class="header__container-burger-wrapper burger-wrapper" for="togglenav">
+          <div class="header__container-burger-wrapper-hamburger hamburger"></div>
+          <div class="header__container-burger-wrapper-layer-click" (click)="menuBurger()"></div>
         </label>
       </button>
       <nav class="header__container-nav" [class.show]="show">
