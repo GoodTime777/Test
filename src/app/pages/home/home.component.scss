@@ -1,0 +1,32 @@
+@use "variables";
+@use "mixins" as mixins;
+
+:host ::ng-deep app-background {
+  .background {
+    &__bg {
+      background-image: linear-gradient(
+        -60deg,
+        var(--color-seashell) 50%,
+        rgba(224, 226, 230, 0.12) 50%
+      );
+    }
+  }
+}
+
+:host ::ng-deep app-cubes {
+  .cubes {
+    margin-left: auto;
+    right: 8%;
+    bottom: 80px;
+
+    @include mixins.tablet {
+      right: 18.5%;
+      bottom: 35px;
+    }
+    @include mixins.mobile {
+      right: 0;
+      bottom: 30px;
+      margin: 0 auto;
+    }
+  }
+}

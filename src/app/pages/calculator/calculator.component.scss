@@ -4,15 +4,15 @@
 
 .calculator {
   color: var(--color-text-black);
-  padding: 0 60px; //60
+  // padding: 0 60px; //60
 
-  @include mixins.tablet {
-    padding: 0 40px;
-  }
+  // @include mixins.tablet {
+  //   padding: 0 40px;
+  // }
 
-   @include mixins.mobile {
-    padding: 0 10px;
-  }
+  //  @include mixins.mobile {
+  //   padding: 0 10px;
+  // }
 
   thead {
     tr {

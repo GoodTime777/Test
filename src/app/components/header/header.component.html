@@ -4,21 +4,32 @@
       <div class="header__container-logo">
         <div class="header__container-logo-box header-logo">
           <a href="#" class="header__container-logo-box-img">
-            <img src="/assets/images/icons/logo-svg-border.svg" alt="logo" />
+            <img
+              src="/assets/images/icons/logo-svg-border.svg"
+              alt="логотип компании"
+            />
             <h2 class="header__container-logo-box-img-name">ВЕРТИКАЛЬ</h2>
           </a>
         </div>
       </div>
       <button class="header__container-burger">
         <input
-          class="header__container-burger-trigger  hidden"
+          class="header__container-burger-trigger hidden"
           id="togglenav"
           type="checkbox"
           [checked]="isCheckboxChecked"
         />
-        <label class="header__container-burger-wrapper burger-wrapper" for="togglenav">
-          <div class="header__container-burger-wrapper-hamburger hamburger"></div>
-          <div class="header__container-burger-wrapper-layer-click" (click)="menuBurger()"></div>
+        <label
+          class="header__container-burger-wrapper burger-wrapper"
+          for="togglenav"
+        >
+          <div
+            class="header__container-burger-wrapper-hamburger hamburger"
+          ></div>
+          <div
+            class="header__container-burger-wrapper-layer-click"
+            (click)="menuBurger()"
+          ></div>
         </label>
       </button>
       <nav class="header__container-nav" [class.show]="show">

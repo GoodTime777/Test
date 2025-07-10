@@ -1,102 +1,90 @@
 @use "variables";
-@use "mixins" as mixin;
+@use "mixins" as mixins;
 
-// @mixin fill {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   right: 0;
-//   bottom: 0;
-// }
+@mixin fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
 
-// .cubes {
-//   position: relative;
-//   width: 15%; //3em;
-//   min-height: 190px;
-//   max-height: 240px;
-//   font-size: clamp(5.625rem, 4.0536rem + 2.4554vw, 7rem);
-//   transform-style: preserve-3d;
-//   transform: rotateX(60deg) rotateZ(45deg);
+.cubes {
+  position: relative;
+  width: 15%; //3em;
+  height: 225px;
+  font-size: clamp(5.625rem, 4.0536rem + 2.4554vw, 7rem);
+  transform-style: preserve-3d;
+  transform: rotateX(60deg) rotateZ(45deg);
 
-//   @media (max-width: 767px) {
-//     font-size: 20px;
-//     min-height: 0px;
-//     max-height: 0px;
-//   }
+ @include mixins.tablet {
+    font-size: 66px;
+    height: 215px;
+  }
 
-//   &__cube {
-//     position: absolute;
-//     width: 1em;
-//     height: 1em;
-//     border: 1px solid var(--color-black);
-//     animation: move var(--ani-dur) ease-in-out infinite;
-//     transform-style: preserve-3d;
+  @include mixins.mobile {
+    font-size: 20px;
+    height: 20px;
+  }
 
-//     &::before,
-//     &::after {
-//       content: "";
-//       //@include fill;
-//       position: absolute;
-//       top: 0;
-//       left: 0;
-//       right: 0;
-//       bottom: 0;
-//       border: 1px solid var(--color-black);
-//     }
+  &__cube {
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    border: 1px solid var(--color-black);
+    animation: move var(--ani-dur) ease-in-out infinite;
+    transform-style: preserve-3d;
 
-//     &::before {
-//       transform-origin: 100% 100%;
-//       transform: rotateY(-90deg);
-//     }
+    &::before,
+    &::after {
+      content: "";
+      //@include fill;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border: 1px solid var(--color-black);
+    }
 
-//     &::after {
-//       transform-origin: 0% 100%;
-//       transform: rotateX(90deg);
-//     }
+    &::before {
+      transform-origin: 100% 100%;
+      transform: rotateY(-90deg);
+    }
 
-//     @for $i from 1 through 4 {
-//       &:nth-of-type(#{$i}) {
-//         animation-delay: 8s * calc($i / 4 - 4);
-//       }
-//     }
+    &::after {
+      transform-origin: 0% 100%;
+      transform: rotateX(90deg);
+    }
 
-//     @keyframes move {
-//       0%,
-//       87.5%,
-//       100% {
-//         transform: translate(1em, 0em);
-//       }
-//       12.5% {
-//         transform: translate(2em, 0em);
-//       }
-//       25% {
-//         transform: translate(2em, 1em);
-//       }
-//       37.5%,
-//       50% {
-//         transform: translate(1em, 1em);
-//       }
-//       62.5% {
-//         transform: translate(0em, 1em);
-//       }
-//       75% {
-//         transform: translate(0em, 0em);
-//       }
-//     }
-//   }
-// }
+    @for $i from 1 through 4 {
+      &:nth-of-type(#{$i}) {
+        animation-delay: 8s * calc($i / 4 - 4);
+      }
+    }
 
-// .advantage .cubes {
-//   margin-left: auto;
-//   right: 8%;
-//   bottom: 80px;
-
-//   @media (min-width: 768px) and (max-width: 1599px) {
-//     right: 13%;
-//   }
-//   @media (max-width: 767px) {
-//     right: 0;
-//     bottom: 25px;
-//     margin: 0 auto;
-//   }
-// }
+    @keyframes move {
+      0%,
+      87.5%,
+      100% {
+        transform: translate(1em, 0em);
+      }
+      12.5% {
+        transform: translate(2em, 0em);
+      }
+      25% {
+        transform: translate(2em, 1em);
+      }
+      37.5%,
+      50% {
+        transform: translate(1em, 1em);
+      }
+      62.5% {
+        transform: translate(0em, 1em);
+      }
+      75% {
+        transform: translate(0em, 0em);
+      }
+    }
+  }
+}
