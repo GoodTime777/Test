@@ -85,17 +85,25 @@
 //  */
 @mixin mobile($max-mobile-width: 767px) {
   @media (max-width: $max-mobile-width) {
-    //   @content;
+    @content;
   }
 }
-@mixin tablet($min-tablet-width: 768px) {
-  @media (min-width: $min-tablet-width) {
-    //   @content;
+// @mixin tablet($min-tablet-width:768px ,$max-tablet-width: 1599px) {
+//   @media(min-width: $min-tablet-width) and (max-width: $max-tablet-width) {
+//        @content;
+//   }
+// }
+
+@mixin tablet($max-tablet-width: 1599px) {
+  @media (max-width: $max-tablet-width) {
+    @content;
   }
 }
+
+//@include mixins.tablet
 @mixin desktop($min-desktop-width: 1600px) {
   @media (min-width: $min-desktop-width) {
-    //   @content;
+    @content;
   }
 }
 // /**

@@ -74,7 +74,7 @@
     border-top-width: 65px;
     border-bottom-width: 65px;
 
-    @media (min-width: 768px) and (max-width: 1599px) {
+   @include mixins.tablet {
       border-top-width: 40px;
       border-bottom-width: 40px;
     }
@@ -90,12 +90,12 @@
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
 
-    @media (min-width: 768px) and (max-width: 1599px) {
+   @include mixins.tablet {
       border-right-width: 73px;
       border-left-width: 30px;
     }
 
-    @media (max-width: 767px) {
+    @include mixins.mobile {
       border-top-width: 25px;
       border-bottom-width: 80px;
       border-left-width: 150px;
@@ -118,7 +118,7 @@
     border-right-color: transparent;
     border-right-width: 0;
 
-    @media (max-width: 767px) {
+    @include mixins.mobile {
       left: 0;
       top: 100%;
       border-bottom-width: 0px;
@@ -131,12 +131,12 @@
     border-left-width: 60px;
     z-index: 10;
 
-    @media (min-width: 768px) and (max-width: 1599px) {
+   @include mixins.tablet {
       right: -29px;
       border-left-width: 30px;
     }
 
-    @media (max-width: 767px) {
+    @include mixins.mobile {
       border-right-width: 150px;
       border-left-width: 150px;
       border-top-width: 30px;
@@ -153,12 +153,12 @@
     z-index: 0;
     transition: right 0.5s ease;
 
-    @media (min-width: 768px) and (max-width: 1599px) {
+   @include mixins.tablet {
       right: -33px;
       border-left-width: 34px;
     }
 
-    @media (max-width: 767px) {
+    @include mixins.mobile {
       right: 0;
       top: 105%;
       border-top-width: 35px;
@@ -172,21 +172,21 @@
 .arrow:hover {
   transform: translateX(6px);
 
-  @media (min-width: 768px) and (max-width: 1599px) {
+ @include mixins.tablet {
     transform: translateX(3.5px);
   }
 
-  @media (max-width: 767px) {
+  @include mixins.mobile {
     transform: translateX(0px);
   }
 }
 .arrow:hover .arrow__block-arrow::after {
   right: -68px;
 
-  @media (min-width: 768px) and (max-width: 1599px) {
+ @include mixins.tablet {
     right: -33px;
   }
-  @media (max-width: 767px) {
+  @include mixins.mobile {
     right: 0;
   }
 }
@@ -392,12 +392,12 @@
   transform-style: preserve-3d;
   transform: rotateX(60deg) rotateZ(45deg);
 
-  @media (min-width: 768px) and (max-width: 1599px) {
+ @include mixins.tablet {
     font-size: 66px;
     height: 215px;
   }
 
-  @media (max-width: 767px) {
+  @include mixins.mobile {
     font-size: 20px;
     height: 20px;
   }
@@ -469,11 +469,11 @@
   right: 8%;
   bottom: 80px;
 
-  @media (min-width: 768px) and (max-width: 1599px) {
+ @include mixins.tablet {
     right: 18.5%;
     bottom: 35px;
   }
-  @media (max-width: 767px) {
+  @include mixins.mobile {
     right: 0;
     bottom: 30px;
     margin: 0 auto;

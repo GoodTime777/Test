@@ -9,11 +9,11 @@
     padding: 8px 25px;
     @include mixins.flex($justify-c: space-between, $align-i: normal);
 
-    @media (min-width: 768px) and (max-width: 1599px) {
+    @include mixins.tablet {
       padding: 15px 25px;
     }
 
-    @media (max-width: 767px) {
+    @include mixins.mobile {
       padding: 8px 10px 25px 10px;
       display: grid;
       grid-template-areas: "A" "B";
@@ -24,7 +24,7 @@
     p {
       font-size: clamp(0.875rem, 0.7321rem + 0.2232vw, 1rem); //14-16 1024-1920
 
-      @media (max-width: 767px) {
+      @include mixins.mobile {
         font-size: 14px;
       }
     }
@@ -32,11 +32,11 @@
     &__left {
       width: 50%;
 
-      @media (min-width: 768px) and (max-width: 1599px) {
+      @include mixins.tablet {
         width: 75%;
       }
 
-      @media (max-width: 767px) {
+      @include mixins.mobile {
         grid-area: A;
         width: 100%;
         position: relative;
@@ -46,13 +46,14 @@
       &-info {
         display: flex;
         width: 100%;
-        @media (min-width: 768px) and (max-width: 1599px) {
+        @include mixins.tablet {
           position: relative;
           display: grid;
           grid-template-areas: "A B" "A C";
         }
 
-        @media (max-width: 767px) {
+        @include mixins.mobile {
+          display: flex;
           flex-direction: column;
           gap: 10px;
         }
@@ -62,12 +63,12 @@
           flex-direction: column;
           margin-right: 10px;
 
-          @media (min-width: 768px) and (max-width: 1599px) {
+          @include mixins.tablet {
             margin-bottom: auto;
             grid-area: A;
           }
 
-          @media (max-width: 767px) {
+          @include mixins.mobile {
             margin-right: 0;
           }
 
@@ -77,7 +78,7 @@
             border-bottom: 1px solid var(--color-texas-rose);
             margin-bottom: 8px;
 
-            @media (max-width: 767px) {
+            @include mixins.mobile {
               margin-bottom: 4px;
             }
           }
@@ -86,7 +87,7 @@
             color: var(--color-text-white);
 
             &-detail-one {
-              @media (max-width: 767px) {
+              @include mixins.mobile {
                 color: var(--color-texas-rose);
               }
             }
@@ -98,7 +99,7 @@
           gap: 10px;
           margin-right: 10px;
 
-          @media (min-width: 768px) and (max-width: 1599px) {
+          @include mixins.tablet {
             grid-area: B;
           }
 
@@ -109,8 +110,11 @@
               gap: 10px;
               margin-bottom: 5px;
 
-              @media (min-width: 768px) and (max-width: 1599px) {
+              @include mixins.tablet {
                 margin-bottom: 0;
+              }
+              @include mixins.mobile {
+                margin-bottom: 5px;
               }
 
               &-txt {
@@ -126,14 +130,14 @@
               }
 
               &-tel {
-                @media (min-width: 768px) and (max-width: 1599px) {
+                @include mixins.tablet {
                   width: 53%;
                 }
 
                 a {
                   transition: color 0.5s ease;
 
-                  @media (max-width: 767px) {
+                  @include mixins.mobile {
                     color: var(--color-texas-rose);
                   }
 
@@ -158,7 +162,7 @@
           margin-left: auto;
           margin-right: 10px;
 
-          @media (min-width: 768px) and (max-width: 1599px) {
+          @include mixins.tablet {
             grid-area: C;
             flex-direction: row;
             position: absolute;
@@ -167,10 +171,10 @@
             margin-right: 5px;
           }
 
-          @media (max-width: 767px) {
+          @include mixins.mobile {
             flex-direction: row;
             position: absolute;
-            bottom: 12px;
+            bottom: 10px;
             right: 0;
           }
 
@@ -197,12 +201,12 @@
       width: 4%;
       margin: auto 0 0px 10px;
 
-      @media (min-width: 768px) and (max-width: 1599px) {
+      @include mixins.tablet {
         width: 7%;
         margin: auto 0 -2px 5px;
       }
 
-      @media (max-width: 767px) {
+      @include mixins.mobile {
         width: 50px;
         position: absolute;
         bottom: 24%;
@@ -223,11 +227,11 @@
       @include mixins.flex($justify-c: space-between, $align-i: normal);
       flex-direction: column;
 
-      @media (min-width: 768px) and (max-width: 1599px) {
+      @include mixins.tablet {
         width: 40%;
       }
 
-      @media (max-width: 767px) {
+      @include mixins.mobile {
         grid-area: B;
         width: 100%;
         flex-direction: row;
@@ -241,7 +245,7 @@
           display: flex;
           gap: 15px;
 
-          @media (max-width: 767px) {
+          @include mixins.mobile {
             gap: 6px;
             flex-direction: column;
             justify-content: center;
@@ -250,7 +254,7 @@
 
           &-item {
             &-link {
-              @media (max-width: 767px) {
+              @include mixins.mobile {
                 border-bottom: 1px dashed var(--color-texas-rose);
               }
             }
@@ -259,7 +263,7 @@
               transition: color 0.3s ease-in-out;
               color: var(--color-text-white);
 
-              @media (max-width: 767px) {
+              @include mixins.mobile {
                 color: var(--color-texas-rose);
               }
             }
@@ -275,7 +279,7 @@
         text-align: right;
         margin-left: auto;
 
-        @media (max-width: 767px) {
+        @include mixins.mobile {
           @include mixins.flex($justify-c: flex-end, $align-i: normal);
           flex-direction: column;
           padding-bottom: 7px;
@@ -291,14 +295,14 @@
           &-link {
             transition: color 0.3s ease-in-out;
 
-            @media (max-width: 767px) {
+            @include mixins.mobile {
               border-bottom: 1px dashed var(--color-texas-rose);
             }
           }
           &-link:hover {
             color: var(--color-texas-rose);
 
-            @media (max-width: 767px) {
+            @include mixins.mobile {
               color: var(--color-text-white);
             }
           }
@@ -314,7 +318,7 @@
 
   .line,
   .decor::after {
-    @media (max-width: 767px) {
+    @include mixins.mobile {
       display: none;
     }
   }

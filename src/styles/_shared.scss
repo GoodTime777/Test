@@ -9,14 +9,14 @@ body {
   margin: 0 auto;
   padding-top: 62px;
 
-  @media (min-width: 768px) and (max-width: 1599px) {
+  @include mixins.tablet{
     padding-top: 60px;
   }
-  @media (max-width: 767px) {
+  @include mixins.mobile {
     padding-top: 57px;
   }
 
-  @media (max-width: 767px) {
+  @include mixins.mobile {
   }
 }
 
@@ -38,11 +38,11 @@ h1 {
   font-size: 48px;
   line-height: 1;
   // font-size: clamp(1.625rem, 0.3558rem + 2.6442vw, 3rem);//26-48
-  @media (min-width: 768px) and (max-width: 1599px) {
+  @include mixins.tablet{
     font-size: 30px;
   }
 
-  @media (max-width: 767px) {
+  @include mixins.mobile {
     font-size: 30px;
     color: var(--color-text-white);
   }
@@ -67,10 +67,10 @@ th {
   font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1.25rem);
   text-transform: uppercase;
 
-  @media (min-width: 768px) and (max-width: 1599px) {
+  @include mixins.tablet{
     font-size: 16px;
   }
-  @media (max-width: 767px) {
+  @include mixins.mobile {
     font-size: 14px;
   }
 }
@@ -83,10 +83,10 @@ button {
   font-size: 18px;
   //font-size: clamp(0.875rem, 0.5893rem + 0.4464vw, 1.125rem); //14-18 320-1920
 
-  @media (min-width: 768px) and (max-width: 1599px) {
+  @include mixins.tablet{
     font-size: 14px;
   }
-  @media (max-width: 767px) {
+  @include mixins.mobile {
     font-size: 14px;
   }
 }
@@ -130,11 +130,11 @@ a {
   max-width: 1600px; //1920px;
   margin: 0 auto;
 
-  @media (min-width: 768px) and (max-width: 1599px) {
+  @include mixins.tablet{
     max-width: 768px;
   }
 
-  @media (max-width: 767px) {
+  @include mixins.mobile {
     max-width: 320px;
   }
 }
@@ -145,7 +145,7 @@ a {
     margin-bottom: 10px;
   }
 
-  @media (max-width: 767px) {
+  @include mixins.mobile {
     width: 100%;
   }
   button {
@@ -156,11 +156,11 @@ a {
     padding: 15px 0;
     transition: color 0.4s ease, border 0.4s ease, background-color 0.4s ease;
 
-    @media (min-width: 768px) and (max-width: 1599px) {
+    @include mixins.tablet{
       padding: 12px 0;
     }
 
-    @media (max-width: 767px) {
+    @include mixins.mobile {
       width: 100%;
     }
     a {
@@ -175,7 +175,7 @@ a {
   a {
     color: var(--color-black);
 
-    @media (max-width: 767px) {
+    @include mixins.mobile {
       color: var(--color-seashell);
     }
   }
@@ -188,7 +188,7 @@ a {
   a {
     color: var(--color-seashell);
 
-    // @media (max-width: 767px) {
+    // @include mixins.mobile {
     //   color: var(--color-seashell);
     // }
   }
@@ -201,7 +201,7 @@ a {
 
   a {
     color: var(--color-black);
-    @media (max-width: 767px) {
+    @include mixins.mobile {
       color: var(--color-seashell);
     }
   }
@@ -238,7 +238,7 @@ a {
   color: var(--color-black);
   border: 1px solid var(--color-border-black);
 
-  @media (max-width: 767px) {
+  @include mixins.mobile {
     background-color: rgba(255, 187, 61, 1);
     border: 1px solid transparent;
   }
@@ -246,7 +246,7 @@ a {
   a {
     color: var(--color-black);
 
-    @media (max-width: 767px) {
+    @include mixins.mobile {
       color: var(--color-seashell);
     }
   }
@@ -268,7 +268,7 @@ a {
 
   a {
     color: var(--color-black);
-    @media (max-width: 767px) {
+    @include mixins.mobile {
       color: var(--color-seashell);
     }
   }
@@ -278,12 +278,12 @@ a {
   @include mixins.flex();
   gap: 15px;
 
-  @media (min-width: 768px) and (max-width: 1599px) {
+  @include mixins.tablet{
     flex-direction: column;
     gap: 0px;
   }
 
-  @media (max-width: 767px) {
+  @include mixins.mobile {
     width: 100%;
     flex-direction: column;
     gap: 5px;
@@ -302,10 +302,10 @@ a {
   //font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem); //16-20 320-1920
   // font-size: clamp(1rem, 0.7692rem + 0.4808vw, 1.25rem); //16-20
   font-size: clamp(0.875rem, 0.5288rem + 0.7212vw, 1.25rem);
-  @media (min-width: 768px) and (max-width: 1599px) {
+  @include mixins.tablet{
     font-size: 14px;
   }
-  @media (max-width: 767px) {
+  @include mixins.mobile {
     font-size: 16px; //16
     font-weight: 300;
   }
@@ -314,10 +314,10 @@ a {
 .emphasized-txt {
   //Выделенный
   font-size: clamp(1rem, 0.925rem + 0.375vw, 1.375rem); //16-22 320-1920
-  @media (min-width: 768px) and (max-width: 1599px) {
+  @include mixins.tablet{
     font-size: 16px;
   }
-  @media (max-width: 767px) {
+  @include mixins.mobile {
     font-size: 16px; //16
   }
 }
@@ -325,11 +325,11 @@ a {
 .txt {
   //  font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1.25rem); //14-20 320-1920
   font-size: clamp(1rem, 0.7692rem + 0.4808vw, 1.25rem); //16-20
-  @media (min-width: 768px) and (max-width: 1599px) {
+  @include mixins.tablet{
     font-size: 16px;
     font-weight: 300;
   }
-  @media (max-width: 767px) {
+  @include mixins.mobile {
     font-size: 14px;
   }
 }

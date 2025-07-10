@@ -1,5 +1,6 @@
 @use "variables";
 @use "@angular/material" as mat;
+@use "mixins" as mixins;
 
 :root {
   @include mat.tabs-overrides(
@@ -26,7 +27,7 @@
     );
   }
 
-  @media (max-width: 767px) {
+  @include mixins.mobile {
     @include mat.tabs-overrides(
       (
         label-text-size: 18px,

@@ -10,7 +10,7 @@
     padding: 20px;
     position: relative;
 
-    @media (max-width: 767px) {
+     @include mixins.mobile {
       padding: 10px;
       display: flex;
       flex-direction: column;
@@ -41,7 +41,7 @@
       box-shadow: 5px 5px 5px var(--color-shadow-black-05);
       background-color: var(--color-bg-dark-gray);
 
-      @media (max-width: 767px) {
+       @include mixins.mobile {
         width: 95%;
       }
     }
@@ -66,7 +66,7 @@
     &__video {
       margin-bottom: 20px;
 
-      @media (max-width: 767px) {
+       @include mixins.mobile {
         order: 2;
         margin-bottom: 0px;
       }
@@ -84,7 +84,7 @@
     }
 
     &__photo {
-      @media (max-width: 767px) {
+       @include mixins.mobile {
         order: 1;
         position: relative;
         margin-bottom: 10px;
@@ -96,7 +96,7 @@
         transform: scale(1, 1);
         transition: transform 0.7s ease-in-out;
 
-        @media (max-width: 767px) {
+         @include mixins.mobile {
           margin: 5px 0px;
         }
 
@@ -104,7 +104,7 @@
           border-color: var(--color-border-dark-orange);
           transform: scale(1.1, 1.1);
 
-          @media (max-width: 767px) {
+           @include mixins.mobile {
             transform: scale(1, 1);
           }
         }

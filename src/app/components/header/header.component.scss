@@ -8,7 +8,7 @@
   z-index: 100;
   background-color: var(--color-bg-orange);
 
-  @media (max-width: 767px) {
+  @include mixins.mobile {
     overflow: visible;
   }
 
@@ -19,16 +19,17 @@
       flex-flow: wrap;
       padding: 7px 35px;
 
-      @media (max-width: 1599px) {
+     @include mixins.tablet {
         padding: 7px 10px;
       }
 
-      @media (max-width: 767px) {
+      @include mixins.mobile {
+        padding: 7px 10px;
         justify-content: center;
       }
 
       &-logo {
-        @media (max-width: 767px) {
+        @include mixins.mobile {
           order: 2;
         }
 
@@ -37,7 +38,7 @@
             @include mixins.flex();
 
             &-name {
-              @media (max-width: 767px) {
+              @include mixins.mobile {
                 display: none;
               }
             }
@@ -47,7 +48,7 @@
             width: 40px;
             padding-bottom: 4px;
 
-            @media (max-width: 767px) {
+            @include mixins.mobile {
               padding-bottom: 0;
             }
           }
@@ -63,7 +64,7 @@
         border-radius: none;
         transform: translateY(0%);
 
-        @media (max-width: 767px) {
+        @include mixins.mobile {
           order: 1;
           @include mixins.size($width: 310px, $height: 0vh);
           position: absolute;
@@ -84,17 +85,17 @@
           gap: 25px;
           margin: 0 auto;
 
-          @media (min-width: 768px) and (max-width: 1599px) {
+         @include mixins.tablet {
             gap: 15px;
           }
 
-          @media (max-width: 767px) {
+          @include mixins.mobile {
             flex-direction: column;
           }
 
           &-item {
             a {
-              @media (max-width: 767px) {
+              @include mixins.mobile {
                 color: black;
               }
             }
@@ -108,7 +109,7 @@
                 font-size: 28px;
                 transition: transform 0.5s ease;
 
-                @media (max-width: 767px) {
+                @include mixins.mobile {
                   color: black;
                 }
               }
@@ -125,7 +126,7 @@
           }
 
           &-item:active {
-            @media (max-width: 767px) {
+            @include mixins.mobile {
               color: orange;
             }
           }
@@ -133,7 +134,7 @@
       }
 
       &-nav.show {
-        @media (max-width: 767px) {
+        @include mixins.mobile {
           transform: translateY(54.35%);
           height: 100vh;
         }
@@ -141,7 +142,7 @@
 
       &-tel,
       .tel {
-        @media (max-width: 767px) {
+        @include mixins.mobile {
           order: 3;
           margin-left: auto;
         }
@@ -160,7 +161,7 @@
               margin-right: -5px;
             }
 
-            @media (max-width: 767px) {
+            @include mixins.mobile {
               margin-right: -5px;
             }
 
@@ -180,13 +181,13 @@
         a:hover {
           color: var(--color-link-white);
 
-          @media (max-width: 767px) {
+          @include mixins.mobile {
             color: rgb(0, 0, 0);
           }
         }
 
         a:active {
-          @media (max-width: 767px) {
+          @include mixins.mobile {
             color: var(--color-link-white);
           }
         }
@@ -195,7 +196,7 @@
       &-burger {
         display: none;
 
-        @media (max-width: 767px) {
+        @include mixins.mobile {
           display: block;
           @include mixins.size($width: 40px, $height: 40px);
           color: rgb(0, 0, 0);
