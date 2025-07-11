@@ -1,0 +1,23 @@
+@use "variables";
+@use "mixins" as mixins;
+
+.picture {
+  width: 100%;
+
+  img {
+    @include mixins.size();
+    object-fit: cover;
+    border-radius: 5px;
+    filter: grayscale(60%);
+    border-radius: 5px;
+    transition: all 0.25s ease-in-out;
+
+    @include mixins.mobile {
+      @include mixins.mobile;
+    }
+  }
+
+  img:hover {
+    @include mixins.mobile;
+  }
+}

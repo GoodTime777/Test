@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { CubesComponent } from "../../../cubes/cubes.component";
+import { CubesComponent } from "../../../../core/ui/cubes/cubes.component";
 @Component({
   selector: 'app-advantage',
   imports: [MatIconModule, CubesComponent],

@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit, inject, model, signal, EventEmitter, Output, ElementRef, ViewChild } from '@angular/core';
 import { RouterLink, RouterLinkActive, Router } from '@angular/router';
-import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { ServicesComponent } from '../../pages/services/services.component';
@@ -19,8 +18,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { DialogComponent } from '../../pages/dialog/dialog.component';
-import { NgClass, NgIf } from '@angular/common';
+import { DialogComponent } from '../../core/ui/dialog/dialog.component';
+
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 @Component({

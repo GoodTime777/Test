@@ -12,9 +12,9 @@ import {
 import { MatDialogModule } from '@angular/material/dialog';
 //import { DialogComponent } from '../dialog/dialog.component';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { DialogComponent } from '../dialog/dialog.component';
-import { BackgroundComponent } from "../background/background.component";
-import { TruckComponent } from "../truck/truck.component";
+import { DialogComponent } from '../../core/ui/dialog/dialog.component';
+import { BackgroundComponent } from "../../core/ui/background/background.component";
+import { TruckComponent } from "../../core/ui/truck/truck.component";
 
 
 

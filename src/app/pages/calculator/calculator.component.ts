@@ -4,7 +4,7 @@ import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms'
 import { MatFormFieldModule } from '@angular/material/form-field';
 //import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
-import { DialogComponent } from '../../pages/dialog/dialog.component';
+import { DialogComponent } from '../../core/ui/dialog/dialog.component';
 import {
   MAT_DIALOG_DATA,
   MatDialog,

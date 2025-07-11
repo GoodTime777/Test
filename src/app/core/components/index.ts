@@ -1,0 +1,1 @@
+export { PictureComponent } from './picture/picture.component';

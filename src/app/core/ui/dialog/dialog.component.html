@@ -1,4 +1,3 @@
-
 <div class="modal">
   <h2 mat-dialog-title class="modal__title">Обратный звонок / заявка</h2>
   <p class="modal__subtitle">Выезд в день обращения</p>
@@ -25,15 +24,15 @@
           <mat-option [value]="work">{{ work }}</mat-option>
           }
         </mat-select>
-        <mat-error *ngIf="works?.hasError('required')">
-          Это обязательное поле
+        <mat-error>
+          @if(works?.hasError('required')){ Это обязательное поле }
         </mat-error>
       </mat-form-field>
       <mat-form-field class="modal__dialog-form-field">
         <mat-label>Адрес</mat-label>
         <input matInput type="text" formControlName="address" name="address" />
-        <mat-error *ngIf="address?.hasError('required')">
-          Это обязательное поле
+        <mat-error>
+          @if(address?.hasError('required')){ Это обязательное поле }
         </mat-error>
       </mat-form-field>
 
@@ -48,8 +47,8 @@
           formControlName="tel"
           name="tel"
         />
-        <mat-error *ngIf="tel?.hasError('required')">
-          Это обязательное поле
+        <mat-error>
+          @if(tel?.hasError('required')){ Это обязательное поле }
         </mat-error>
       </mat-form-field>
 

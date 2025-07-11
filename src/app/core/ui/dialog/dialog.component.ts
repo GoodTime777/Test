@@ -2,7 +2,7 @@ import { Component, inject, model } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import {
   MAT_DIALOG_DATA,
- //   MatDialog,
+  //   MatDialog,
   MatDialogActions,
   MatDialogClose,
   MatDialogContent,
@@ -14,8 +14,6 @@ import { MatInputModule } from '@angular/material/input';
 import { FormControl, FormsModule, ReactiveFormsModule, NgForm, FormGroup, Validators } from '@angular/forms';
 import { NgxMaskDirective } from 'ngx-mask';
 import { MatSelectModule } from '@angular/material/select';
-
-import { NgIf } from '@angular/common';
 
 export interface DialogData {
   //animal: string;
@@ -34,7 +32,7 @@ export interface DialogData {
     NgxMaskDirective,
     MatFormFieldModule,
     MatSelectModule,
-    ReactiveFormsModule, NgIf
+    ReactiveFormsModule,   
   ],
   templateUrl: './dialog.component.html',
   styleUrl: './dialog.component.scss'
@@ -73,5 +71,4 @@ export class DialogComponent {
   onSubmit() {
     console.log(this.applicationForm.value)
   }
- 
 }
