@@ -1,8 +1,8 @@
-import { NgIf } from '@angular/common';
-import { Component , inject} from '@angular/core';
-import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms'
+
+import { Component, inject } from '@angular/core';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms'
 import { MatFormFieldModule } from '@angular/material/form-field';
-//import { MatInputModule } from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogComponent } from '../../core/ui/dialog/dialog.component';
 import {
@@ -14,32 +14,37 @@ import {
   MatDialogRef,
   MatDialogTitle,
 } from '@angular/material/dialog';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-calculator',
-  imports: [ReactiveFormsModule,MatDialogModule,   MatFormFieldModule],
+  imports: [ReactiveFormsModule, CommonModule, MatDialogModule, MatFormFieldModule, MatInputModule],
   templateUrl: './calculator.component.html',
   styleUrl: './calculator.component.scss'
 })
 
 export class CalculatorComponent {
-  areaFloor = new FormControl(1, [Validators.required, Validators.min(1)]);
-  widthFloor = new FormControl(6, [Validators.required, Validators.min(6)]);
+  readonly dialog = inject(MatDialog);
+
   priceFloor = 800;
   resultFloor = 0;
-
-  areaWall = new FormControl(1, [Validators.required, Validators.min(1)]);
   priceWall = 750;
   resultWall = 0;
 
+  floor = new FormGroup({
+    areaFloor: new FormControl(1, [Validators.required, Validators.min(1)]),
+    widthFloor: new FormControl(6, [Validators.required, Validators.min(6)]),
+  })
 
+  wall = new FormGroup({
+    areaWall: new FormControl(1, [Validators.required, Validators.min(1)]),
+  })
 
   calculateFloor() {
-    if (this.widthFloor.value !== null && this.areaFloor.value !== null) {
-
-      if ((this.widthFloor.value) > 6) {
-        this.resultFloor = ((((this.widthFloor.value) - 6) * 150) + this.priceFloor) * (this.areaFloor.value)
+    if (!!this.floor.value.widthFloor && !!this.floor.value.areaFloor) {
+      if ((this.floor.value.widthFloor) > 6) {
+        this.resultFloor = ((((this.floor.value.widthFloor) - 6) * 150) + this.priceFloor) * (this.floor.value.areaFloor)
       } else {
-        this.resultFloor = (this.areaFloor.value) * this.priceFloor
+        this.resultFloor = (this.floor.value.areaFloor) * this.priceFloor
       }
     }
 
@@ -48,14 +53,23 @@ export class CalculatorComponent {
 
 
   calculateWall() {
-    if (this.areaWall.value !== null) {
-      this.resultWall = this.areaWall.value * this.priceWall
+    if (!!this.wall.value.areaWall) {
+      this.resultWall = this.wall.value.areaWall * this.priceWall
     }
 
     return this.resultWall
   }
 
- readonly dialog = inject(MatDialog);
+  resetFormFloor() {
+    this.floor.controls['areaFloor'].setValue(1);
+    this.floor.controls['widthFloor'].setValue(6);
+    this.resultFloor = 0
+  }
+
+  resetFormWall() {
+    this.wall.controls['areaWall'].setValue(1);
+    this.resultWall = 0
+  }
 
   openDialog(): void {
     this.dialog.open(DialogComponent);

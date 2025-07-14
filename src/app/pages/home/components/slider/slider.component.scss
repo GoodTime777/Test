@@ -72,7 +72,7 @@
         border-bottom-right-radius: 10px;
       }
 
-      &-slide {
+      &-desk {
         position: absolute;
         @include mixins.size($width: 61.5%);
         display: flex;

@@ -53,96 +53,147 @@
     </div>
     <h2 class="calculator__title">Рассчет стоимости</h2>
     <div class="calculator__container">
-      <div class="calculator__container-calc calc-floor">
-        <h2 class="calculator__container-calc-name">Cтяжка пола</h2>
-        <div class="calculator__container-calc-wrap">
-          <div class="calculator__container-calc-wrap-item">
-            <div class="calculator__container-calc-wrap-item-label">
-              Площадь (м<sup>2</sup>)
+      <form [formGroup]="floor" class="calculator__container-form">
+        <div class="calculator__container-form-calc calc-floor">
+          <h2 class="calculator__container-form-calc-name">Cтяжка пола</h2>
+          <div class="calculator__container-form-calc-wrap">
+            <div class="calculator__container-form-calc-wrap-item">
+              <mat-label
+                class="calculator__container-form-calc-wrap-item-label"
+              >
+                Площадь (м<sup>2</sup>)
+              </mat-label>
+              <mat-form-field
+                class="calculator__container-form-calc-wrap-item-input"
+              >
+                <input
+                  matInput
+                  type="number"
+                  name="areaFloor"
+                  formControlName="areaFloor"
+                  id="areaFloor"
+                />
+                <mat-error>
+                  @if(floor.get('areaFloor')?.invalid){
+                  @if(floor.get('areaFloor')?.hasError('required')) { Это
+                  обязательное поле } @else { Площать от 1м<sup>2</sup> } }
+                </mat-error>
+              </mat-form-field>
             </div>
-            <div class="calculator__container-calc-wrap-item-input">
-              <input type="number" name="area" [formControl]="areaFloor" />
-              <mat-error>
-                @if(areaFloor.hasError('required')){ Это обязательное поле
-                }@else if(areaFloor.hasError('min')){ Площать от
-                1(м<sup>2</sup>)}
-              </mat-error>
+            <div class="calculator__container-form-calc-wrap-item">
+              <mat-label
+                class="calculator__container-form-calc-wrap-item-label"
+              >
+                Толщина (см)
+              </mat-label>
+              <mat-form-field
+                class="calculator__container-form-calc-wrap-item-input"
+              >
+                <input
+                  matInput
+                  type="number"
+                  formControlName="widthFloor"
+                  name="width"
+                  id="widthFloor"
+                />
+                <mat-error>
+                  @if(floor.get('widthFloor')?.invalid){
+                  @if(floor.get('widthFloor')?.hasError('required')) { Это
+                  обязательное поле } @else {Толщина от 6см} }
+                </mat-error>
+              </mat-form-field>
             </div>
-          </div>
-          <div class="calculator__container-calc-wrap-item">
-            <div class="calculator__container-calc-wrap-item-label">
-              Толщина (см)
-            </div>
-            <div class="calculator__container-calc-wrap-item-input">
-              <input type="number" name="width" [formControl]="widthFloor" />
-              <mat-error>
-                @if(widthFloor.hasError('required')){ Это обязательное поле
-                }@else if(widthFloor.hasError('min')){ Толщина от 6см}
-              </mat-error>
-            </div>
-          </div>
-          <div class="calculator__container-calc-wrap-item result-floor">
-            <button
-              class="calculator__container-calc-wrap-item-btn"
-              (click)="calculateFloor()"
-              [disabled]="
-                (widthFloor.invalid && areaFloor.invalid) ||
-                widthFloor.invalid ||
-                areaFloor.invalid
-              "
-            >
-              Рассчитать
-            </button>
-            <div class="calculator__container-calc-wrap-item-result result">
-              Итого:{{ resultFloor }}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="calculator__container-calc calc-wall">
-        <h2 class="calculator__container-calc-name">Штукатурка стен</h2>
-        <div class="calculator__container-calc-wrap calc-wall-wrap">
-          <div class="calculator__container-calc-wrap-item">
-            <div class="calculator__container-calc-wrap-item-label">
-              Площадь (м<sup>2</sup>)
-            </div>
-            <div class="calculator__container-calc-wrap-item-input">
-              <input type="number" name="area" [formControl]="areaWall" />
-              <mat-error>
-                @if(areaWall.hasError('required') ){ Это обязательное поле
-                }@else if(areaWall.hasError('min')){ Площать от
-                1(м<sup>2</sup>)}
-              </mat-error>
-            </div>
-          </div>
-
-          <div class="calculator__container-calc-wrap-item result-floor">
-            <button
-              class="calculator__container-calc-wrap-item-btn"
-              (click)="calculateWall()"
-              [disabled]="areaWall.invalid"
-            >
-              Рассчитать
-            </button>
-            <div class="calculator__container-calc-wrap-item-result result">
-              Итого:{{ resultWall }}
+            <div class="calculator__container-form-calc-wrap-item result-floor">
+              <button
+                class="calculator__container-form-calc-wrap-item-btn btnClear"
+                (click)="resetFormFloor()"
+              >
+                Очистить
+              </button>
+              <button
+                class="calculator__container-form-calc-wrap-item-btn btnCalc"
+                (click)="calculateFloor()"
+                [disabled]="floor.invalid"
+              >
+                Рассчитать
+              </button>
+              <div
+                class="calculator__container-form-calc-wrap-item-result result"
+              >
+                Итого: {{ resultFloor }}
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </form>
+      <form [formGroup]="wall" class="calculator__container-form">
+        <div class="calculator__container-form-calc calc-wall">
+          <h2 class="calculator__container-form-calc-name">Штукатурка стен</h2>
+          <div class="calculator__container-form-calc-wrap calc-wall-wrap">
+            <div class="calculator__container-form-calc-wrap-item">
+              <mat-label
+                class="calculator__container-form-calc-wrap-item-label"
+              >
+                Площадь (м<sup>2</sup>)
+              </mat-label>
+              <mat-form-field
+                class="calculator__container-form-calc-wrap-item-input"
+              >
+                <input
+                  matInput
+                  type="number"
+                  name="area"
+                  formControlName="areaWall"
+                />
+                <mat-error>
+                  @if (wall.get('areaWall')?.hasError('required')) { Это
+                  обязательное поле } @else if
+                  (wall.get('areaWall')?.hasError('min')) { Площать от
+                  1м<sup>2</sup>}
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="calculator__container-form-calc-wrap-item result-floor">
+              <button
+                class="calculator__container-form-calc-wrap-item-btn btnClear"
+                (click)="resetFormWall()"
+              >
+                Очистить
+              </button>
+              <button
+                class="calculator__container-form-calc-wrap-item-btn btnCalc"
+                (click)="calculateWall()"
+                [disabled]="wall.invalid"
+              >
+                Рассчитать
+              </button>
+              <div
+                class="calculator__container-form-calc-wrap-item-result result"
+              >
+                Итого: {{ resultWall }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
     </div>
 
     <div class="calculator__result">
       <div class="calculator__result-number result">
-        ИТОГОВАЯ СТОИМОСТЬ: {{ resultFloor + resultWall }} &#8381;
+        ИТОГОВАЯ СТОИМОСТЬ:
+        {{ resultFloor + resultWall }} &#8381;
       </div>
       <p class="calculator__result-description">
         Точная стоимость будет рассчитана после замеров мастером.
       </p>
       <div class="calculator__result-btn btn">
-        <button class="btn-orange" (click)="openDialog()">Оставить заявку</button>
+        <button class="btn-orange" (click)="openDialog()">
+          Оставить заявку
+        </button>
       </div>
     </div>
   </div>
 </div>
+
+

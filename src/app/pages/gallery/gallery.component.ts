@@ -15,10 +15,12 @@ import { TMainSlide } from './types';
 })
 
 export class GalleryComponent {
-  // protected slides: TMainSlide[] = getDataFromDB(GalleryDB, ['slides']);
-  protected slides: readonly TMainSlide[] = getDataFromDB(GalleryDB, 'slides');
+  //public slides: TMainSlide[] = GalleryDB.slides
+  public slides: any = GalleryDB.slides  
+ 
+  // protected slides: readonly TMainSlide[] = getDataFromDB(GalleryDB, 'slides');
 }
 
-function getDataFromDB(db: { readonly [key: string]: readonly TMainSlide[] }, key: string): readonly TMainSlide[] {
-  return db[key];
-}
+// function getDataFromDB(db: { readonly [key: string]: readonly TMainSlide[] }, key: string): readonly TMainSlide[] {
+//   return db[key];
+// }

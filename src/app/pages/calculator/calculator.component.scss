@@ -4,15 +4,6 @@
 
 .calculator {
   color: var(--color-text-black);
-  // padding: 0 60px; //60
-
-  // @include mixins.tablet {
-  //   padding: 0 40px;
-  // }
-
-  //  @include mixins.mobile {
-  //   padding: 0 10px;
-  // }
 
   thead {
     tr {
@@ -20,7 +11,7 @@
         border-bottom: none;
         background-color: var(--color-bg-yellow);
 
-         @include mixins.mobile {
+        @include mixins.mobile {
           height: 60px;
           font-weight: 400;
           padding: 0 5px;
@@ -38,7 +29,7 @@
           font-size: 14px;
         }
 
-         @include mixins.mobile {
+        @include mixins.mobile {
           font-size: 14px;
           height: 60px;
         }
@@ -48,7 +39,7 @@
         font-family: Oswald, "Helvetica Neue", sans-serif;
         font-size: 18px;
 
-         @include mixins.mobile {
+        @include mixins.mobile {
           font-size: 16px;
           line-height: 1.2;
         }
@@ -74,20 +65,20 @@
     }
 
     .table-one {
-       @include mixins.mobile {
+      @include mixins.mobile {
         display: flex;
         flex-direction: row;
       }
 
       thead,
       tbody {
-         @include mixins.mobile {
+        @include mixins.mobile {
           display: flex;
           flex-direction: row;
         }
 
         tr {
-           @include mixins.mobile {
+          @include mixins.mobile {
             display: flex;
             flex-direction: column;
           }
@@ -98,7 +89,7 @@
         th:nth-child(2),
         th:nth-child(4),
         th:nth-child(6) {
-           @include mixins.mobile {
+          @include mixins.mobile {
             background-color: transparent;
           }
         }
@@ -106,12 +97,12 @@
 
       tbody {
         tr {
-           @include mixins.mobile {
+          @include mixins.mobile {
             border-left: 1px solid #000;
           }
 
           td:nth-child(1) {
-             @include mixins.mobile {
+            @include mixins.mobile {
               padding: 0 15px;
             }
           }
@@ -119,7 +110,7 @@
         tr:nth-child(2) {
           background-color: var(--color-bg-yellow);
 
-           @include mixins.mobile {
+          @include mixins.mobile {
             background-color: transparent;
           }
         }
@@ -127,7 +118,7 @@
         td:nth-child(1),
         td:nth-child(3),
         td:nth-child(5) {
-           @include mixins.mobile {
+          @include mixins.mobile {
             background-color: var(--color-bg-yellow);
           }
         }
@@ -135,13 +126,13 @@
 
       th,
       td {
-         @include mixins.mobile {
+        @include mixins.mobile {
           @include mixins.flex();
         }
       }
 
       th.inline-flex {
-         @include mixins.mobile {
+        @include mixins.mobile {
           display: inline;
           line-height: 50px;
         }
@@ -159,80 +150,104 @@
     gap: 50px;
     margin-bottom: 20px;
 
-     @include mixins.mobile {
+    @include mixins.mobile {
       flex-direction: column;
       align-items: center;
       gap: 10px;
       margin-bottom: 10px;
     }
 
-    &-calc {
+    &-form {
       width: 40%;
       @include mixins.card-outline($border-r: 20px);
       padding: 13px;
 
-      @media (max-width: 1599px) {
+      @include mixins.tablet {
         width: 100%;
       }
 
-      &-name {
-        text-align: center;
-        margin-bottom: 0px;
-      }
+      &-calc {
+        &-name {
+          text-align: center;
+          margin-bottom: 0px;
+        }
 
-      &-wrap {
-        &-item {
-          width: 100%;
-          @include mixins.flex();
-          flex-direction: column;
-          margin: 10px auto;
-
-          &-label {
-            margin-bottom: 5px;
-          }
-
-          &-input {
+        &-wrap {
+          &-item {
             width: 100%;
-            color: white;
-            margin-bottom: 10px;
+            @include mixins.flex();
+            flex-direction: column;
+            margin: 10px auto;
 
-            input {
-              width: 100%;
-              padding: 10px;
-              border-radius: 6px;
-              background-color: rgb(20, 20, 20);
+            &-label {
+              margin-right: auto;
+              margin-bottom: 5px;
             }
-          }
 
-          &-btn {
-            width: 100%;
-            color: black;
-            background-color: rgb(255, 255, 255);
-            border-radius: 10px;
-            border: 1px solid rgb(255, 255, 255);
-            transition: color 0.5s ease, border 0.5s ease,
-              background-color 0.5s ease;
-            padding: 10px;
-            margin-bottom: 10px;
+            &-input {
+              width: 100%;
 
-            &:hover {
-              border: 1px solid black;
-
-               @include mixins.mobile {
-                border-color: rgb(255, 255, 255);
+              input {
+                width: 100%;
+                color: var(--color-text-white);
+                border-radius: 6px;
+                background-color: rgb(20, 20, 20);
               }
             }
 
-            &:active {
-              color: rgb(255, 255, 255);
-              background-color: black;
+            .btnClear {
+              grid-area: A;
+              width: 100%;
+            }
+
+            .btnCalc {
+              grid-area: B;
+              width: 100%;
+            }
+
+            &-btn {
+              color: var(--color-text-black);
+              background-color: rgb(255, 255, 255);
+              border-radius: 10px;
+              border: 1px solid rgb(255, 255, 255);
+              transition: color 0.5s ease, border 0.5s ease,
+                background-color 0.5s ease;
+              padding: 10px;
+
+              &:hover {
+                border: 1px solid black;
+
+                @include mixins.mobile {
+                  border-color: rgb(255, 255, 255);
+                }
+              }
+
+              &:active {
+                color: var(--color-text-white);
+                background-color: black;
+              }
+            }
+
+            &-result {
+              grid-area: C;
+              font-size: 22px;
+              font-weight: 400;
+              text-align: center;
             }
           }
+        }
+      }
 
-          &-result {
-            font-size: 22px;
-            font-weight: 400;
-          }
+      .result-floor,
+      .result-wall {
+        width: 100%;
+        display: grid;
+        grid-template-areas: "A B" "C C";
+        gap: 10px;
+        justify-content: stretch;
+
+        @include mixins.tablet {
+          grid-template-areas: "A" "B" "C";
         }
       }
     }
@@ -241,7 +256,7 @@
       width: 100%;
       padding-top: 38px;
 
-       @include mixins.mobile {
+      @include mixins.mobile {
         padding-top: 0px;
       }
     }
@@ -258,8 +273,12 @@
       border-bottom: 2px solid var(--color-border-orange);
     }
 
+    &-description {
+      text-align: center;
+    }
+
     &-btn {
-       @include mixins.mobile {
+      @include mixins.mobile {
         width: 100%;
       }
     }
@@ -267,7 +286,7 @@
 
   button[disabled] {
     cursor: not-allowed;
-    color: black;
+    color: var(--color-text-black);
     background-color: transparent;
     border-color: black;
   }

@@ -39,6 +39,7 @@
 
         &-txt {
           margin-bottom: 20px;
+          color: white;
         }
 
         &-buttons {
@@ -78,7 +79,7 @@
   }
 }
 
-:host ::ng-deep .mat-mdc-tab-labels {
+:host ::ng-deep .mat-mdc-tab-labels { 
    @include mixins.mobile {
     padding: 0 10px;
   }

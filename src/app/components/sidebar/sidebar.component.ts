@@ -13,12 +13,14 @@ import {
   MatDialogRef,
   MatDialogTitle,
 } from '@angular/material/dialog';
+
 @Component({
   selector: 'app-sidebar',
   imports: [MatIconModule, MatDialogModule, RouterLink, RouterLinkActive],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'
 })
+
 export class SidebarComponent {
   readonly dialog = inject(MatDialog);
 

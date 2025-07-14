@@ -1,12 +1,10 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
-import { AppComponent } from './app/app.component';
 import { register as registerSwiperElements } from 'swiper/element/bundle';
-//import { NgxMaskConfig, provideEnvironmentNgxMask } from 'ngx-mask'
 
+import { AppComponent } from './app/app.component';
+import { appConfig } from './app/app.config';
 
+registerSwiperElements();
 
-
-registerSwiperElements();//!
-bootstrapApplication(AppComponent,appConfig)
-  .catch((err) => console.error(err));
+bootstrapApplication(AppComponent, appConfig)
+  .catch(err => console.error(err));
