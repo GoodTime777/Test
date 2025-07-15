@@ -25,7 +25,7 @@ h2,
 h3,
 h4 {
   font-family: Oswald, "Helvetica Neue", sans-serif;
-  color: var(--color-black);
+  color: var(--color-text-black);
 }
 
 h2,
@@ -90,7 +90,9 @@ button {
     font-size: 14px;
   }
 }
-
+button{
+  font-weight: 300;
+}
 th,
 .header-logo,
 .result,
@@ -116,7 +118,7 @@ input[type="number"] {
 }
 
 a {
-  color: var(--color-white);
+  color: var(--color-link-white);
 }
 .wrapper {
   width: 100%;
@@ -142,7 +144,7 @@ a {
 .advantage,
 .cooperation,
 .technologies {
-  padding: 0 60px; 
+  padding: 0 60px;
 
   @include mixins.tablet {
     padding: 0 40px;
@@ -181,12 +183,12 @@ a {
     }
   }
 }
-.btn-black {
+.btn-black, .btn-black.btn-black:active {
   color: var(--color-black);
   border: 1px solid var(--color-border-black);
 
   a {
-    color: var(--color-black);
+    color: var(--color-link-black);
 
     @include mixins.mobile {
       color: var(--color-seashell);
@@ -200,27 +202,23 @@ a {
 
   a {
     color: var(--color-seashell);
-
-    // @include mixins.mobile {
-    //   color: var(--color-seashell);
-    // }
   }
 }
 
 .btn-black:active {
-  color: var(--color-black);
-  border: 1px solid var(--color-black);
+  //  color: var(--color-black);
+  //  border: 1px solid var(--color-border-black);
   background-color: inherit;
 
-  a {
-    color: var(--color-black);
-    @include mixins.mobile {
-      color: var(--color-seashell);
-    }
-  }
+  // a {
+  //   color: var(--color-link-black);
+  //   @include mixins.mobile {
+  //     color: var(--color-seashell);
+  //   }
+  // }
 }
 
-.btn-white {
+.btn-white, .btn-white.btn-white:active {
   color: var(--color-seashell);
   border: 1px solid var(--color-seashell);
 
@@ -234,18 +232,18 @@ a {
   background-color: var(--color-seashell);
 
   a {
-    color: var(--color-black);
+    color: var(--color-link-black);
   }
 }
 
 .btn-white:active {
-  color: var(--color-seashell);
-  border: 1px solid var(--color-seashell);
+  // color: var(--color-seashell);
+  // border: 1px solid var(--color-seashell);
   background-color: inherit;
 
-  a {
-    color: var(--color-seashell);
-  }
+  // a {
+  //   color: var(--color-seashell);
+  // }
 }
 .btn-orange {
   color: var(--color-black);
@@ -264,6 +262,7 @@ a {
     }
   }
 }
+
 .btn-orange:hover {
   color: var(--color-black);
   background-color: rgba(255, 187, 61, 1);
@@ -298,7 +297,7 @@ a {
 
   @include mixins.mobile {
     width: 100%;
-    flex-direction: column;
+   // flex-direction: column;
     gap: 5px;
   }
 }
@@ -311,9 +310,8 @@ a {
   width: 0px; /* remove scrollbar space */
   background: transparent; /* optional: just make scrollbar invisible */
 }
+
 .main-txt {
-  //font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem); //16-20 320-1920
-  // font-size: clamp(1rem, 0.7692rem + 0.4808vw, 1.25rem); //16-20
   font-size: clamp(0.875rem, 0.5288rem + 0.7212vw, 1.25rem);
   @include mixins.tablet {
     font-size: 14px;
@@ -330,9 +328,9 @@ a {
   @include mixins.tablet {
     font-size: 16px;
   }
-  @include mixins.mobile {
-    font-size: 16px; //16
-  }
+  // @include mixins.mobile {
+  //   font-size: 16px; //16
+  // }
 }
 
 .txt {

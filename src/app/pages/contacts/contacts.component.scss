@@ -165,16 +165,16 @@
         button,
         button:hover {
           @include mixins.mobile {
-            background-color: black;
-            color: white;
+            background-color: var(--color-bg-black);
+            color: var(--color-txt-white);
             border: none;
           }
         }
 
         button:active {
           @include mixins.mobile {
-            background-color: white;
-            color: black;
+            background-color: var(--color-bg-white);
+            color: var(--color-txt-black);
           }
         }
       }

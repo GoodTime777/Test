@@ -33,13 +33,12 @@
         </label>
       </button>
       <nav class="header__container-nav" [class.show]="show">
-        <ul class="header__container-nav-menu">
+        <ul class="header__container-nav-menu" (click)="menuBurgerClose($event)">
           <li class="header__container-nav-menu-item">
             <a
               [routerLinkActiveOptions]="{ exact: true }"
               routerLink=""
-              routerLinkActive="active"
-              (click)="menuBurgerClose()"
+              routerLinkActive="active"             
             >
               <span>
                 <mat-icon>cottage</mat-icon>
@@ -50,29 +49,27 @@
             <a
               class="decor"
               routerLink="services"
-              routerLinkActive="active"
-              (click)="menuBurgerClose()"
+              routerLinkActive="active"             
             >
-              Услуги</a
+            <span>  Услуги</span> </a
             >
+
           </li>
 
           <li class="header__container-nav-menu-item">
             <a
               class="decor"
               routerLink="calculator"
-              routerLinkActive="active"
-              (click)="menuBurgerClose()"
-              >Калькулятор</a
+              routerLinkActive="active"             
+              > <span>Калькулятор</span></a
             >
           </li>
           <li class="header__container-nav-menu-item">
             <a
               class="decor"
               routerLink="gallery"
-              routerLinkActive="active"
-              (click)="menuBurgerClose()"
-              >Проекты</a
+              routerLinkActive="active"             
+              > <span>Проекты</span></a
             >
           </li>
           <li class="header__container-nav-menu-item">
@@ -80,13 +77,13 @@
               class="decor"
               routerLink="contacts"
               routerLinkActive="active"
-              (click)="menuBurgerClose()"
-              >Контакты</a
+             
+              > <span>Контакты</span></a
             >
           </li>
 
           <li class="header__container-nav-menu-item">
-            <button (click)="openDialog()" (click)="menuBurgerClose()">
+            <button (click)="openDialog()">
               <span>
                 <mat-icon>engineering</mat-icon>
               </span>

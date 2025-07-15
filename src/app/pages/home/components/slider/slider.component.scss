@@ -17,7 +17,7 @@
     box-shadow: -1px 6px 8px 0px var(--color-shadow-black-05);
 
     @include mixins.mobile {
-      position: relative;    
+      position: relative;
       border-bottom-left-radius: 10px;
       border-bottom-right-radius: 10px;
     }
@@ -25,7 +25,7 @@
     &__icon {
       display: none;
 
-       @include mixins.mobile {
+      @include mixins.mobile {
         display: block;
         position: absolute;
         z-index: 2;
@@ -36,7 +36,7 @@
       mat-icon {
         @include mixins.size();
         font-size: 30px;
-        color: var(--color-white);
+        color: var(--color-txt-white);
         animation: color-icon 4s ease-in-out infinite;
       }
     }
@@ -45,7 +45,7 @@
   .swiper {
     @include mixins.size();
 
-     @include mixins.mobile {
+    @include mixins.mobile {
       display: grid;
       grid-template-columns: 1fr;
     }
@@ -61,7 +61,7 @@
         height: 380px;
       }
 
-       @include mixins.mobile {
+      @include mixins.mobile {
         height: 450px;
         color: var(--color-text-white);
         background-repeat: no-repeat;
@@ -111,13 +111,13 @@
             width: 40%;
           }
 
-           @include mixins.mobile {
+          @include mixins.mobile {
             width: 100%;
           }
         }
       }
       &-content {
-         @include mixins.mobile {
+        @include mixins.mobile {
           height: 100%;
           @include mixins.flex();
           flex-direction: column;
@@ -127,13 +127,13 @@
         }
 
         &-title {
-           @include mixins.mobile {
+          @include mixins.mobile {
             margin-bottom: 12px;
           }
         }
 
         &-txt {
-           @include mixins.mobile {
+          @include mixins.mobile {
             margin-bottom: auto;
           }
         }
@@ -144,7 +144,7 @@
   .swiper-slide-0 {
     display: flex;
 
-     @include mixins.mobile {
+    @include mixins.mobile {
       display: none;
     }
 
@@ -180,7 +180,7 @@
       color: var(--color-text-white);
       right: -18%;
 
-       @include mixins.mobile {
+      @include mixins.mobile {
         right: -70%;
       }
     }
@@ -189,7 +189,7 @@
   .swiper-slide-1,
   .swiper-slide-2 {
     display: none;
-     @include mixins.mobile {
+    @include mixins.mobile {
       display: block;
     }
   }
@@ -205,16 +205,16 @@
   }
 
   swiper-container::part(pagination) {
-     @include mixins.mobile {
+    @include mixins.mobile {
       bottom: 5px;
     }
   }
 
   swiper-container::part(bullet-active) {
     @include mixins.size($width: 0, $height: 0);
-    background-color: orange;
+    background-color: var(--color-bg-light-orange);
 
-     @include mixins.mobile {
+    @include mixins.mobile {
       @include mixins.size($width: 10px, $height: 10px);
     }
   }
@@ -222,9 +222,9 @@
   swiper-container::part(bullet) {
     @include mixins.size($width: 0, $height: 0);
 
-     @include mixins.mobile {
+    @include mixins.mobile {
       @include mixins.size($width: 8px, $height: 8px);
-      background: rgb(255, 255, 255);
+      background: var(--color-bg-white);
       opacity: 0.7;
     }
   }

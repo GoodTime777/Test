@@ -15,6 +15,9 @@
   --color-black-cow: rgb(75, 74, 74); //color+
   --color-carbon-gray: rgb(90, 90, 90); //bg+
 
+  //*glass
+  --color-glass: rgba(255, 241, 214, 0.315); //*
+
   //*black
   --color-black: rgb(0, 0, 0); //a+, color+, @
   --color-black-05: rgba(0, 0, 0, 0.5); //shadow+
@@ -35,53 +38,58 @@
   --color-bright-red: rgb(255, 0, 0); //decor
 
   //*txt
-  --color-text-white: var(--color-white);
-  --color-text-gray: var(--color-black-cow);
-  --color-text-black: var(--color-black);
+  --color-text-white: rgb(255, 255, 255);
+  --color-txt-white: rgb(255, 255, 255);
+  --color-text-gray: rgb(75, 74, 74);
+  --color-text-black: rgb(0, 0, 0);
 
   //*link
-  --color-link-white: var(--color-white);
-  --color-link-black: var(--color-black);
+  --color-link-white: rgb(255, 255, 255);
+  --color-link-black: rgb(0, 0, 0);
 
   //*shadow
-  --color-shadow-black-0: var(--color-black-0);
-  --color-shadow-black-02: var(--color-black-02);
-  --color-shadow-black-05: var(--color-black-05);
-  --color-shadow-black-1: var(--color-black);
-  --color-shadow-black: var(--color-zeus);
+  --color-shadow-black-0: rgba(0, 0, 0, 0);
+  --color-shadow-black-02: rgba(0, 0, 0, 0.233);
+  --color-shadow-black-05: rgba(0, 0, 0, 0.5);
+  --color-shadow-black-1: rgb(0, 0, 0);
+  --color-shadow-black: rgba(32, 32, 32, 0.4);
 
   //*border
-  --color-border-white: var(--color-white);
-  --color-border-white-02: var(--color-white-02);
-  --color-border-white-03: var(--color-white-03);
-  --color-border-black: var(--color-black);
-  --color-border-dark-orange: var(--color-gamboge);
-  --color-border-orange: var(--color-squash);
+  --color-border-white: rgb(255, 255, 255);
+  --color-border-white-02: rgba(255, 255, 255, 0.23);
+  --color-border-white-03: rgba(255, 255, 255, 0.3);
+  --color-border-black: rgb(0, 0, 0);
+  --color-border-dark-orange: rgb(255, 141, 10);
+  --color-border-orange: rgb(255, 166, 0);
 
   //*background-orange
-  --color-bg-light-orange: var(--color-squash);
-  --color-bg-orange: var(--color-gamboge); //header
-  --color-bg-yellow: var(--color-texas-rose);
+  --color-bg-light-orange: rgb(255, 166, 0);
+  --color-bg-orange: rgb(255, 141, 10); //header
+  --color-bg-yellow: rgb(255, 187, 61);
 
   //*background-gray
-  --color-bg-white: var(--color-white-03);
-  --color-bg-light-gray: var(--color-seashell);
-  --color-bg-middle-gray: var(--color-dune);
-  --color-bg-middle-two-gray: var(--color-carbon-gray);
-  --color-bg-dark-gray: var(--color-cinder);
-  --color-bg-glass: var(--color-white-02);
-  --color-bg-glass-hover-orange: var(--color-grandis);
+  --color-bg-white: rgba(255, 255, 255, 0.3);
+  --color-bg-light-gray: rgb(236, 240, 241);
+  --color-bg-middle-gray: rgba(51, 51, 51, 1);
+  --color-bg-middle-two-gray: rgb(90, 90, 90);
+  --color-bg-dark-gray: rgb(20, 20, 20);
+  --color-bg-glass: rgba(255, 255, 255, 0.2);
+  --color-bg-glass-hover-orange: rgba(255, 209, 140, 0.37);
+
+  //*background-black-white
+  --color-bg-black: rgb(0, 0, 0);
+  --color-bg-white: rgb(255, 255, 255);
 
   //*state
-  --color-error: var(--color-rosso-corsa);
-  --color-error-dark: var(--color-venetian-red);
+  --color-error: rgb(230, 0, 0);
+  --color-error-dark: rgb(206, 2, 2);
 
   //*time
   --color-time: 0.9s;
 
   //decor
-  --c-white: var(--color-white);
-  --c-black: var(--color-black);
+  --c-white: rgb(255, 255, 255);
+  --c-black: rgb(0, 0, 0);
   --ani-dur: 8s;
   --size: 112px;
 }

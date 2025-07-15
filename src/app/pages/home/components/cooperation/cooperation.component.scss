@@ -9,20 +9,9 @@
   }
 
   .cooperation {
-    // padding: 0 60px;
-
-    // @include mixins.tablet {
-    //   padding: 0 40px;
-    // }
-
-    //  @include mixins.mobile {
-    //   padding: 0 10px;
-    // }
-
     &__title {
       text-transform: uppercase;
       margin-bottom: 20px;
-      //text-decoration: underline solid var(--color-squash);
     }
 
     &__wrapper {

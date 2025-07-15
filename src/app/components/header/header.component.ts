@@ -54,7 +54,7 @@ export class HeaderComponent implements OnInit {
     this.show = !this.show
   }
 
-  menuBurgerClose() {
+  menuBurgerClose(event:Event) {
     this.isCheckboxChecked = false;
     this.show = false
   }

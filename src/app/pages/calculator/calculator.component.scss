@@ -61,7 +61,7 @@
       width: 100%;
       text-align: center;
       border-spacing: 0px;
-      border: 1px solid black;
+      border: 1px solid var(--color-border-black);
     }
 
     .table-one {
@@ -98,7 +98,7 @@
       tbody {
         tr {
           @include mixins.mobile {
-            border-left: 1px solid #000;
+            border-left: 1px solid var(--color-border-black);
           }
 
           td:nth-child(1) {
@@ -207,24 +207,24 @@
 
             &-btn {
               color: var(--color-text-black);
-              background-color: rgb(255, 255, 255);
+              background-color: var(--color-bg-white);
               border-radius: 10px;
-              border: 1px solid rgb(255, 255, 255);
+              border: 1px solid var(--color-border-white);
               transition: color 0.5s ease, border 0.5s ease,
                 background-color 0.5s ease;
               padding: 10px;
 
               &:hover {
-                border: 1px solid black;
+                border: 1px solid var(--color-border-black);
 
                 @include mixins.mobile {
-                  border-color: rgb(255, 255, 255);
+                  border-color: var(--color-border-white);
                 }
               }
 
               &:active {
                 color: var(--color-text-white);
-                background-color: black;
+                background-color: var(--color-border-black);
               }
             }
 
@@ -288,6 +288,6 @@
     cursor: not-allowed;
     color: var(--color-text-black);
     background-color: transparent;
-    border-color: black;
+    border-color: var(--color-border-black);
   }
 }

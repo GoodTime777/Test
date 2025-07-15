@@ -25,7 +25,6 @@
       }
 
       @include mixins.mobile {
-        // padding: 7px 10px;
         justify-content: center;
       }
 
@@ -73,11 +72,9 @@
           transition-property: transform, border-radius, width, height;
           transition-duration: 0.6s;
           transition-timing-function: ease-in-out;
-          background: rgb(255, 255, 255);
+          background: var(--color-bg-white);
           border-bottom-left-radius: 10px;
           border-bottom-right-radius: 10px;
-          //padding-top: 50px;
-          //padding: 0;
           margin: -10px auto 0 auto;
           z-index: -1;
         }
@@ -93,14 +90,13 @@
 
           @include mixins.mobile {
             flex-direction: column;
-           // @include mixins.card-outline($background-c: white);
             min-height: 91.5%;
           }
 
           &-item {
             a {
               @include mixins.mobile {
-                color: black;
+                color: var(--color-text-black);
               }
             }
 
@@ -109,18 +105,18 @@
 
               mat-icon {
                 @include mixins.size();
-                color: white;
+                color: var(--color-text-white);
                 font-size: 28px;
                 transition: transform 0.5s ease;
 
                 @include mixins.mobile {
                   transition: color 0.15s ease-in-out;
-                  color: black;
+                  color: var(--color-text-black);
                 }
               }
               mat-icon:active {
                 @include mixins.mobile {
-                  color: orange;
+                  color: var(--color-squash);
                 }
               }
             }
@@ -140,7 +136,7 @@
 
           &-item:active {
             @include mixins.mobile {
-              color: orange;
+              color: var(--color-squash);
             }
           }
         }
@@ -212,7 +208,7 @@
         @include mixins.mobile {
           display: block;
           @include mixins.size($width: 40px, $height: 40px);
-          color: rgb(0, 0, 0);
+          color: var(--color-text-black);
           margin-right: 4px;
         }
 
@@ -248,7 +244,7 @@
             position: relative;
             top: 4px;
             border-radius: 10px;
-            background: black;
+            background: var(--color-bg-black);
             transition: background 10ms 300ms ease;
             margin: auto;
 
@@ -259,7 +255,7 @@
               position: absolute;
               left: 0;
               border-radius: 10px;
-              background: black;
+              background: var(--color-bg-black);
               transition: top 300ms 350ms ease, transform 300ms 50ms ease;
             }
 
