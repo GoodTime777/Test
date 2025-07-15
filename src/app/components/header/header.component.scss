@@ -207,12 +207,15 @@
 
         @include mixins.mobile {
           display: block;
-          @include mixins.size($width: 40px, $height: 40px);
-          color: var(--color-text-black);
+        //  @include mixins.size($width: 40px, $height: 40px);
+          color: var(--color-text-black);        
           margin-right: 4px;
+        //  background-color: red;
+        //  margin-top: auto;
         }
 
         &-trigger {
+          display: none;
           &:checked {
             ~ .burger-wrapper {
               .hamburger {
@@ -276,10 +279,6 @@
           }
         }
 
-        .hidden {
-          display: none;
-          -webkit-display: none;
-        }
       }
     }
   }
