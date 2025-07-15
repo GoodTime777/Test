@@ -30,10 +30,10 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 })
 
 export class HeaderComponent implements OnInit {
-  private customBreakpoints:string = '(min-width: 1024px)';
-  private screen:boolean = false;
-  private isCheckboxChecked:boolean = false;
-  private show:boolean = false;
+  public customBreakpoints: string = '(min-width: 1024px)';
+  public screen: boolean = false;
+  public isCheckboxChecked: boolean = false;
+  public show: boolean = false;
 
   public readonly dialog = inject(MatDialog);
 
@@ -56,7 +56,7 @@ export class HeaderComponent implements OnInit {
     this.show = !this.show
   }
 
-  menuBurgerClose(event:Event) {
+  menuBurgerClose(event: Event) {
     this.isCheckboxChecked = false;
     this.show = false
   }
