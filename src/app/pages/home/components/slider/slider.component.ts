@@ -1,4 +1,4 @@
-import { Component,inject, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, inject, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import {
   MAT_DIALOG_DATA,
   MatDialog,
@@ -15,14 +15,14 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-slider',
-  imports: [MatIconModule,MatDialogModule,RouterLink, RouterLinkActive],
+  imports: [MatIconModule, MatDialogModule, RouterLink, RouterLinkActive],
   templateUrl: './slider.component.html',
   styleUrl: './slider.component.scss',
-   schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class SliderComponent {
-  readonly dialog = inject(MatDialog);
-  
+  public readonly dialog = inject(MatDialog);
+
   openDialog(): void {
     this.dialog.open(DialogComponent);
   }

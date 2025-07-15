@@ -25,9 +25,9 @@ import { TruckComponent } from "../../core/ui/truck/truck.component";
   styleUrl: './contacts.component.scss'
 })
 export class ContactsComponent {
-  readonly dialog = inject(MatDialog);
+  public readonly dialog = inject(MatDialog);
+
   openDialog(): void {
     this.dialog.open(DialogComponent);
   }
-
 }

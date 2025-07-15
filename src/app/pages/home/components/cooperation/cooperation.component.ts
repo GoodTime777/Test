@@ -20,7 +20,8 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './cooperation.component.scss'
 })
 export class CooperationComponent {
-  readonly dialog = inject(MatDialog);
+  public readonly dialog = inject(MatDialog);
+
   openDialog(): void {
     this.dialog.open(DialogComponent);
   }

@@ -28,13 +28,15 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent implements OnInit {
-  customBreakpoints = '(min-width: 1024px)'
-  screen = false;
-  isCheckboxChecked = false;
-  show = false;
 
-  readonly dialog = inject(MatDialog);
+export class HeaderComponent implements OnInit {
+  private customBreakpoints:string = '(min-width: 1024px)';
+  private screen:boolean = false;
+  private isCheckboxChecked:boolean = false;
+  private show:boolean = false;
+
+  public readonly dialog = inject(MatDialog);
+
   public screenWidth: any;
   constructor(private breakpointObserver: BreakpointObserver) { }
 

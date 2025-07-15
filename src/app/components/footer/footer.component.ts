@@ -23,11 +23,11 @@ import { DialogComponent } from '../../core/ui/dialog/dialog.component';
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss'
 })
+
 export class FooterComponent {
- readonly dialog = inject(MatDialog);
+public readonly dialog = inject(MatDialog);
 
   openDialog(): void {
-     this.dialog.open(DialogComponent);
-  
+     this.dialog.open(DialogComponent);  
   }
 }

@@ -25,17 +25,17 @@ import { CommonModule } from '@angular/common';
 export class CalculatorComponent {
   readonly dialog = inject(MatDialog);
 
-  priceFloor = 800;
-  resultFloor = 0;
-  priceWall = 750;
-  resultWall = 0;
+  protected priceFloor: number = 800;
+  protected resultFloor: number = 0;
+  protected priceWall: number = 750;
+  protected resultWall: number = 0;
 
-  floor = new FormGroup({
+  protected floor = new FormGroup({
     areaFloor: new FormControl(1, [Validators.required, Validators.min(1)]),
     widthFloor: new FormControl(6, [Validators.required, Validators.min(6)]),
   })
 
-  wall = new FormGroup({
+  protected wall = new FormGroup({
     areaWall: new FormControl(1, [Validators.required, Validators.min(1)]),
   })
 

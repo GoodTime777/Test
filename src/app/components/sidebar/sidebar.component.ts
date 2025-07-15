@@ -22,7 +22,7 @@ import {
 })
 
 export class SidebarComponent {
-  readonly dialog = inject(MatDialog);
+public  readonly dialog = inject(MatDialog);
 
   openDialog(): void {
     this.dialog.open(DialogComponent);

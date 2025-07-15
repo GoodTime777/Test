@@ -23,19 +23,17 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   templateUrl: './services.component.html',
   styleUrl: './services.component.scss'
 })
+
 export class ServicesComponent {
-   fTwo(): void {
+  fTwo(): void {
     console.log('click2')
   }
-  
-  readonly dialog = inject(MatDialog);
+
+  public readonly dialog = inject(MatDialog);
+
   openDialog(): void {
     this.dialog.open(DialogComponent);
   }
-
- 
-
-
 }
 
 
